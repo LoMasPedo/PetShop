@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Tienda PetShop</title>
+<title>Tienda D.Pet Shop</title>
 <style>
 .divInicial {
 	 border: 5px solid white; 

@@ -4,9 +4,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Tienda D.Pet Shop</title>
+<style>
+.divInicial {
+	 background-color:white;
+	 border-bottom: 1px solid black;
+}
+.menu{
+}
+
+</style>
 </head>
 <body>
-HOla mundo
+<div class="divInicial"><img src="img/logo.jpg" width="100px" /></div>
+<div class="menu"></div>
 </body>
 </html>
