@@ -5,22 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Tienda D.Pet Shop</title>
-<style>
-.divInicial {
-	 border: 5px solid white; 
-  border-radius: 5px; 
-  margin: auto; 
-  text-align: center;
-}
+<link rel="stylesheet" href="css/Login.css" type="text/css">
 
-.tablalogin {
-  margin: auto;
-}
-.botoneslogin
-{
-	margin-top:20px;
-}
-</style>
 </head>
 <body>
 	<div class="divInicial">

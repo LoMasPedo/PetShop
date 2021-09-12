@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+.divInicial {
+	 border: 5px solid white; 
+  border-radius: 5px; 
+  margin: auto; 
+  text-align: center;
+}
+
+.tablalogin {
+  margin: auto;
+}
+.botoneslogin
+{
+	margin-top:20px;
+}
