@@ -40,7 +40,7 @@ public class Login extends HttpServlet {
 		if(request.getParameter("enviar")!=null) {
 			usuario=request.getParameter("user");
 			password=request.getParameter("pass");
-			if(usuario.equals("yenny")&& password.equals("111")) {
+			if(usuario.equals("admininicial")&& password.equals("admin123456")) {
 				response.sendRedirect("index.jsp?nom="+usuario);
 			}else
 				response.sendRedirect("login.jsp");
