@@ -23,14 +23,6 @@ public class Login extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +33,7 @@ public class Login extends HttpServlet {
 			usuario=request.getParameter("user");
 			password=request.getParameter("pass");
 			if(usuario.equals("admininicial")&& password.equals("admin123456")) {
-				response.sendRedirect("index.jsp?nom="+usuario);
+				response.sendRedirect("Menu.jsp?nom="+usuario);
 			}else
 				response.sendRedirect("login.jsp");
 		}

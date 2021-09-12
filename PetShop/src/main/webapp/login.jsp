@@ -5,8 +5,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Tienda D.Pet Shop</title>
-<link rel="stylesheet" href="css/Login.css" type="text/css">
+<style>
+.divInicial {
+	 border: 5px solid white; 
+  border-radius: 5px; 
+  margin: auto; 
+  text-align: center;
+}
 
+.tablalogin {
+  margin: auto;
+}
+.botoneslogin
+{
+	margin-top:20px;
+}
+</style>
 </head>
 <body>
 	<div class="divInicial">
@@ -36,7 +50,6 @@
 						<td><input type="submit" name="cancelar" value="Cancelar" /></td>
 					</tr>
 				</table>
-
 			</form>
 		</div>
 
