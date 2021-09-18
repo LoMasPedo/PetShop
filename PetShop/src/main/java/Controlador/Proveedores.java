@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import Modelo.ProveedoresDAO;
 import Modelo.ProveedoresDTO;
-import Modelo.UsuarioDTO;
 
 /**
  * Servlet implementation class Proveedores
@@ -34,26 +33,26 @@ public class Proveedores extends HttpServlet {
 		
 		ProveedoresDAO proveedoresDAO= new ProveedoresDAO();
 		if(request.getParameter("registrar")!=null){
-		long Nit_Proveedor;	
-		String Ciudad_Proveedor,Direccion_Proveedor,Nombre_Proveedor,Telefono_Proveedor;
-		Nit_Proveedor =Long.parseLong( request.getParameter("Nit_Proveedor"));
-		Ciudad_Proveedor = request.getParameter("Ciudad_Proveedor");
-		Direccion_Proveedor = request.getParameter("Direccion_Proveedor");
-		Nombre_Proveedor = request.getParameter("Nombre_Proveedor");
-		Telefono_Proveedor = request.getParameter("Telefono_Proveedor");
-		ProveedoresDTO proveedoresDTO = new ProveedoresDTO (Nit_Proveedor, Ciudad_Proveedor, Direccion_Proveedor, Nombre_Proveedor, Telefono_Proveedor);
-		
-		if(proveedoresDAO.Insertar_Provedores(proveedoresDTO)) {
-			//JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente");
-			System.out.println("se registro exitosamente");
-			response.sendRedirect("Proveedores.jsp?men=Proveedor Registrado Exitosamente");
+			long Nit_Proveedor;	
+			String Ciudad_Proveedor,Direccion_Proveedor,Nombre_Proveedor,Telefono_Proveedor;
+			Nit_Proveedor =Long.parseLong( request.getParameter("Nit_Proveedor"));
+			Ciudad_Proveedor = request.getParameter("Ciudad_Proveedor");
+			Direccion_Proveedor = request.getParameter("Direccion_Proveedor");
+			Nombre_Proveedor = request.getParameter("Nombre_Proveedor");
+			Telefono_Proveedor = request.getParameter("Telefono_Proveedor");
+			ProveedoresDTO proveedoresDTO = new ProveedoresDTO (Nit_Proveedor, Ciudad_Proveedor, Direccion_Proveedor, Nombre_Proveedor, Telefono_Proveedor);
 			
-		}else {
-			//JOptionPane.showMessageDialog(null, "El Usuario no se registro");
-			System.out.println("no se registro");
-			response.sendRedirect("Proveedores.jsp?men=Proveedor Registrado Exitosamente");
+			if(proveedoresDAO.Insertar_Provedores(proveedoresDTO)) {
+				//JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente");
+				System.out.println("se registro exitosamente");
+				response.sendRedirect("Proveedores.jsp?men=Proveedor Registrado Exitosamente");
+				
+			}else {
+				//JOptionPane.showMessageDialog(null, "El Usuario no se registro");
+				System.out.println("no se registro");
+				response.sendRedirect("Proveedores.jsp?men=Proveedor Registrado Exitosamente");
+			}
 		}
-	}
 		
 		
 		

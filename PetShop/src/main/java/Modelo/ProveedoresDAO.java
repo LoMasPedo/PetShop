@@ -35,7 +35,7 @@ public class ProveedoresDAO {
 	public boolean Actualizar_Proveedores(ProveedoresDTO lib) {
 	    boolean resul=false;
 		try {
-		String sql="update proveedores set ciudad_proveedor, direccion_proveedor=?, nombre_proveedor=?, telefono_proveedor=? where nitproveedor=?";
+		String sql="update proveedores set ciudad_proveedor=?, direccion_proveedor=?, nombre_proveedor=?, telefono_proveedor=? where nitproveedor=?";
 		ps = con.prepareStatement(sql);
 		ps.setString(1, lib.getCiudad_Proveedor());
 		ps.setString(2, lib.getDireccion_Proveedor());
@@ -69,7 +69,7 @@ public class ProveedoresDAO {
 		
 		ProveedoresDTO lib= null;
 		try {
-		String sql="select nitproveedor,ciudad_proveedor,direccion_proveedor,nombre_proveedor from usuarios where Nit_Proveedor=?";	
+		String sql="select * from proveedores where nitproveedor=?";	
 		ps=con.prepareStatement(sql);
 		ps.setLong(1, Nit_Proveedor);
 		res=ps.executeQuery();
