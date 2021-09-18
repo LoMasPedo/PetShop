@@ -84,7 +84,7 @@ display:inline-block;
 
 <!--  pueden usar esta lib para los estilos https://getbootstrap.com/docs/5.1/forms/overview/ copie el ejemplo del formulario
 de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales/como-centrar-un-div-con-css/ -->
-<form action="Usuarios" method="post" >
+<form action="Clientes" method="post" >
 <fieldset>
 	<legend>Datos del Cliente:</legend>
 	<div  class="divformulario">
