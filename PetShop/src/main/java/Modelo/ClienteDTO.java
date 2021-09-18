@@ -8,15 +8,15 @@ public class ClienteDTO {
 	private String nombre_cliente;
 	private String telefono_cliente;
 	
-	public ClienteDTO(Long cedula_cliente, String direccion_cliente, String email_cliente, String nombre_cliente,
-			String telefono_cliente) {
-		
+	public ClienteDTO(Long cedula_cliente, String direccion_cliente, String email_cliente, String nombre_cliente,String telefono_cliente) 
+	{
 		this.cedula_cliente = cedula_cliente;
 		this.direccion_cliente = direccion_cliente;
 		this.email_cliente = email_cliente;
 		this.nombre_cliente = nombre_cliente;
 		this.telefono_cliente = telefono_cliente;
 	}
+	
 	public Long getCedula_cliente() {
 		return cedula_cliente;
 	}

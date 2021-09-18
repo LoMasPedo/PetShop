@@ -11,30 +11,34 @@
 
 <jsp:include page="Header.jsp" />
 
-<%!String mensaje="";
+<%!
+String mensaje="";
 long cedulaCliente=0;
 String direccionCliente="",emailCliente="",nombreCliente="",telefonoCliente="", estado="enabled";
 %>
-%>
 
 <%
-if(request.getParameter("cedula_cliente")!=null){
+if(request.getParameter("cedula_cliente")!=null)
+{
 	cedulaCliente=Long.parseLong(request.getParameter("cedula_cliente"));
 	direccionCliente = request.getParameter("direccion_cliente");
 	emailCliente = request.getParameter("email_cliente");
 	nombreCliente = request.getParameter("nombre_cliente");
 	telefonoCliente = request.getParameter("telefono_cliente");
-estado="disabled";
+	mensaje="";
+	estado="disabled";
 }
 %>
 <%
-if(request.getParameter("men")!=null){
+if(request.getParameter("men")!=null)
+{
 	cedulaCliente=0;
 	direccionCliente="";
 	emailCliente="";
 	nombreCliente="";
 	telefonoCliente="";
-mensaje=request.getParameter("men");
+	mensaje=request.getParameter("men");
+	estado="enabled";
 }
 %>
 
@@ -90,7 +94,7 @@ de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales
 	<div  class="divformulario">
 		<label class="labelformulario" >cedula: </label>
 		<input type="number" name="cedula_cliente" value="<%=cedulaCliente%>" required <%=estado%>></div>
-	<input type="hidden" name="cedula_cliente" value="<%=cedulaCliente%>">
+		<input type="hidden" name="cedula_cliente" value="<%=cedulaCliente%>">
 	<div class="divformulario">
 		<label class="labelformulario">direccion_cliente: </label>
 		<input   type="text" name="direccion_cliente" value="<%=direccionCliente%>" required>
@@ -105,7 +109,7 @@ de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales
 	</div>
 	<div class="divformulario">
 		<label class="labelformulario">telefono_cliente: </label>
-		<input type="number" name="telefonoCliente" value="<%=telefonoCliente%>" required>
+		<input type="number" name="telefono_cliente" value="<%=telefonoCliente%>" required>
 	</div>
 	<div  class="divformulario">
 		<input class="botonformulario" type="submit" name="registrar" value="registrar" >
@@ -113,12 +117,12 @@ de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales
 		<input class="botonformulario" type="submit" name="eliminar" value="eliminar" > </div>
 </fieldset>
 </form>
-<form action="Usuarios" method="post">
+<form action="Clientes" method="post">
    <fieldset>
       <legend>Consultar</legend>
       <div class="divformulario">
       <label class="labelformulario">cedula: </label>
-      <input  type="text" name="Cedula_usuario" required></div>
+      <input  type="text" name="cedula_cliente" required></div>
       <div ><input class="botonformulario" type="submit" name="consultar" value="consultar" ></div>
    </fieldset>
 </form>
