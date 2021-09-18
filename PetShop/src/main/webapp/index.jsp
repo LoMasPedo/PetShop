@@ -6,23 +6,28 @@
 <meta charset="ISO-8859-1">
 <title>Tienda D.Pet Shop</title>
 <style>
-.divInicial {
-	 background-color:white;
-	 border-bottom: 1px solid black;
-}
-.menu{
+.saludo{
+
+text-align: center;
 }
 
 </style>
 </head>
 <body>
-<<<<<<< HEAD
+<%
+String mensaje="";
+if(request.getParameter("nom")!=null){
+mensaje=request.getParameter("nom");
+}
+%>
 
+<jsp:include page="Header.jsp" />
 
+ <% if (mensaje != null && mensaje != "") { %>
+		<div class="saludo">Hola <%= mensaje %>, Por Favor Seleccione una opcion del menu</div>
+ <% } else { %>
+        <div class="saludo">Por Favor Seleccione una opcion del menu</div>
+      <% } %>
 
-=======
->>>>>>> parent of da0e2ba (Creación UsuarioDOA y UsuarioDTO)
-<div class="divInicial"><img src="img/logo.jpg" width="100px" /></div>
-<div class="menu"></div>
 </body>
 </html>

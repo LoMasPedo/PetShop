@@ -59,6 +59,8 @@ nav ul li a i{color:#fde428; padding-right:13px;}
 </style>
 </head>
 <body>
+
+<!--  USAR EL ARCHIVO Header.jsp dentro de cada jsp para traer el menu y poder reutilizarlo
 	
 	<img src="img/logo.jpg" width="450px" />
 		
@@ -69,7 +71,7 @@ nav ul li a i{color:#fde428; padding-right:13px;}
 	
 		<nav>
 		<ul>
-		<li><a href="#usuario"><i class="icon-home"></i>Usuarios</a></li>
+		<li><a href="Usuarios.jsp"><i class="icon-home"></i>Usuarios</a></li>
 		<li><a href="#clientes"><i class="icon-user"></i>Clientes</a></li>
 		<li><a href="#proveedores"><i class="icon-thumbs-up-alt"></i>Proveedores</a></li>
 		<li><a href="#productos"><i class="icon-gear"></i>Productos</a></li>
@@ -79,5 +81,7 @@ nav ul li a i{color:#fde428; padding-right:13px;}
 		</nav>
 	</section>	
 	</header>
+	
+	 -->
 </body>
 </html>
