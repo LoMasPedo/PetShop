@@ -64,6 +64,7 @@ if(request.getParameter("men")!=null)
 {
 min-width: 150px;
 display:inline-block;
+font-style: #2ba3ac
 }
 .botonformulario{
      display: inline-block;
@@ -91,26 +92,26 @@ display:inline-block;
 de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales/como-centrar-un-div-con-css/ -->
 <form action="Proveedores" method="post" >
 <fieldset>
-	<legend>Datos del Cliente:</legend>
+	<legend>Datos Proveedor:</legend>
 	<div  class="divformulario">
-		<label class="labelformulario" >NIT Proveedor: </label>
+		<label class="labelformulario" >NIT: </label>
 		<input type="number" name="Nit_Proveedor" value="<%=nit_proveedor%>" required <%=estado%>></div>
 		<input type="hidden" name="Nit_Proveedor" value="<%=nit_proveedor%>">
 	<div class="divformulario">
-		<label class="labelformulario">Ciudad_Proveedor: </label>
-		<input   type="text" name="Ciudad_Proveedor" value="<%=ciudad_proveedor%>" required>
+		<label class="labelformulario">Nombre Proveedor: </label>
+		<input   type="text" name="Ciudad_Proveedor" value="<%=nombre_proveedor%>" required placeholder="nombre_proveedor">
 	</div>
 	<div class="divformulario" >
-		<label class="labelformulario">Direccion_Proveedor: </label>
+		<label class="labelformulario">Direccion: </label>
 		<input  type="text" name="Direccion_Proveedor" value="<%=direccion_proveedor%>" required>
 	</div>
 	<div  class="divformulario">
-		<label class="labelformulario">Nombre_Proveedor: </label>
-		<input  type="text" name="Nombre_Proveedor" value="<%=nombre_proveedor%>" required>
+		<label class="labelformulario">Telefono: </label>
+		<input  type="text" name="Nombre_Proveedor" value="<%=telefono_proveedor%>" required>
 	</div>
 	<div class="divformulario">
-		<label class="labelformulario">Telefono_Proveedor: </label>
-		<input type="number" name="Telefono_Proveedor" value="<%=telefono_proveedor%>" required>
+		<label class="labelformulario">Ciudad: </label>
+		<input type="number" name="Telefono_Proveedor" value="<%=ciudad_proveedor%>" required>
 	</div>
 	<div  class="divformulario">
 		<input class="botonformulario" type="submit" name="registrar" value="registrar" >

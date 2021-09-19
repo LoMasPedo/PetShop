@@ -35,11 +35,11 @@
 				<table class="tablalogin">
 					<tr>
 						<td><label for="user" class="labeluser">Usuario: </label></td>
-						<td><input type="text" name="user" /></td>
+						<td><input type="text" name="user" placeholder="Ingrese Su Usuario"/></td>
 					</tr>
 					<tr>
 						<td><label for="pass">Contraseña: </label></td>
-						<td><input type="password" name="pass" /></td>
+						<td><input type="password" name="pass" placeholder="Ingrese la Clave"/></td>
 					</tr>
 					
 				</table>
