@@ -10,6 +10,7 @@
 <body>
 
 <jsp:include page="Header.jsp" />
+<h1>Modulo Usuarios</h1>
 
 <%!
 	String mensaje="";
@@ -24,6 +25,7 @@ if(request.getParameter("Cedula_usuario")!=null){
 	nombre_usuario=request.getParameter("Nombre_usuario");
 	password=request.getParameter("Password");
 	usuario=request.getParameter("Usuarios");
+	mensaje="";
 	estado="disabled";
 }
 %>
@@ -36,6 +38,7 @@ if(request.getParameter("men")!=null){
 	password="";
 	usuario="";
 	mensaje=request.getParameter("men");
+	estado="enabled";
 }
 %>
 

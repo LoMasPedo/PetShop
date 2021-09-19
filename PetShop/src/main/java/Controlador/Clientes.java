@@ -53,7 +53,7 @@ public class Clientes extends HttpServlet {
 			{
 				//JOptionPane.showMessageDialog(null, "El Cliente no se creó.");
 				System.out.println("el cliente no se registro");
-				response.sendRedirect("Clientes.jsp?men=El Cliente no se creó.");
+				response.sendRedirect("Clientes.jsp?men=El Cliente no se creo.");
 			}
 		}
 		

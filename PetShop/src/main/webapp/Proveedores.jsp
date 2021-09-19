@@ -9,7 +9,7 @@
 </head>
 <body>
 <jsp:include page="Header.jsp" />
-<h1>Modulo proveedores</h1>
+<h1>Modulo Proveedores</h1>
 
 <%!
 String mensaje="";

@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
+
 
 import Modelo.UsuarioDAO;
 import Modelo.UsuarioDTO;
@@ -50,7 +50,7 @@ public class Usuarios extends HttpServlet {
 		}else {
 			//JOptionPane.showMessageDialog(null, "El Usuario no se registro");
 			System.out.println("no se registro");
-			response.sendRedirect("Usuarios.jsp?men=Usuario Registrado Exitosamente");
+			response.sendRedirect("Usuarios.jsp?men=Usuario no se Registro");
 		}
 		}
 

@@ -10,6 +10,7 @@
 <body>
 
 <jsp:include page="Header.jsp" />
+<h1>Modulo Clientes</h1>
 
 <%!
 String mensaje="";
