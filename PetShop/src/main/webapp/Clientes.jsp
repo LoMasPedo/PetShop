@@ -92,23 +92,23 @@ de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales
 <fieldset>
 	<legend>Datos del Cliente:</legend>
 	<div  class="divformulario">
-		<label class="labelformulario" >cedula: </label>
+		<label class="labelformulario" >Cedula: </label>
 		<input type="number" name="cedula_cliente" value="<%=cedulaCliente%>" required <%=estado%>></div>
 		<input type="hidden" name="cedula_cliente" value="<%=cedulaCliente%>">
 	<div class="divformulario">
-		<label class="labelformulario">direccion_cliente: </label>
+		<label class="labelformulario">Direccion: </label>
 		<input   type="text" name="direccion_cliente" value="<%=direccionCliente%>" required>
 	</div>
 	<div class="divformulario" >
-		<label class="labelformulario">email_cliente: </label>
+		<label class="labelformulario">Correo Electronico: </label>
 		<input  type="text" name="email_cliente" value="<%=emailCliente%>" required>
 	</div>
 	<div  class="divformulario">
-		<label class="labelformulario">nombre_cliente: </label>
+		<label class="labelformulario">Nombre: </label>
 		<input  type="text" name="nombre_cliente" value="<%=nombreCliente%>" required>
 	</div>
 	<div class="divformulario">
-		<label class="labelformulario">telefono_cliente: </label>
+		<label class="labelformulario">Telefono: </label>
 		<input type="number" name="telefono_cliente" value="<%=telefonoCliente%>" required>
 	</div>
 	<div  class="divformulario">

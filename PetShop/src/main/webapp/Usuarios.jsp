@@ -61,6 +61,7 @@ if(request.getParameter("men")!=null){
 {
 min-width: 150px;
 display:inline-block;
+
 }
 
 .botonformulario{
@@ -76,6 +77,11 @@ display:inline-block;
     color: #fff;
     background-color: #2ba3ac;
     margin:10px;
+}
+.prueba
+{
+	color: #F1110D;
+	font-size: 3rem;
 }
 
 </style>
@@ -104,6 +110,7 @@ de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales
 	</div>
 	
 	<div class="divformulario" >
+	
 		<label class="labelformulario">Nombre Completo: </label>
 		<input  type="text" name="Nombre_usuario" value="<%=nombre_usuario%>" required>
 	</div>
