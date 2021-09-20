@@ -99,7 +99,7 @@ de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales
 		<input type="hidden" name="Nit_Proveedor" value="<%=nit_proveedor%>">
 	<div class="divformulario">
 		<label class="labelformulario">Nombre Proveedor: </label>
-		<input   type="text" name="Ciudad_Proveedor" value="<%=nombre_proveedor%>" required placeholder="nombre_proveedor">
+		<input   type="text" name="Nombre_Proveedor" value="<%=nombre_proveedor%>" required placeholder="nombre_proveedor">
 	</div>
 	<div class="divformulario" >
 		<label class="labelformulario">Direccion: </label>
@@ -107,11 +107,11 @@ de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales
 	</div>
 	<div  class="divformulario">
 		<label class="labelformulario">Telefono: </label>
-		<input  type="text" name="Nombre_Proveedor" value="<%=telefono_proveedor%>" required>
+		<input  type="number" name="Telefono_Proveedor" value="<%=telefono_proveedor%>" required>
 	</div>
 	<div class="divformulario">
 		<label class="labelformulario">Ciudad: </label>
-		<input type="number" name="Telefono_Proveedor" value="<%=ciudad_proveedor%>" required>
+		<input type="text" name="Ciudad_Proveedor" value="<%=ciudad_proveedor%>" required>
 	</div>
 	<div  class="divformulario">
 		<input class="botonformulario" type="submit" name="registrar" value="registrar" >
