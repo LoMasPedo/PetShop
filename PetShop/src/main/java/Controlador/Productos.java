@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 
+import Modelo.ProductoDAO;
+
+
 
 /**
  * Servlet implementation class Productos
@@ -30,12 +33,14 @@ public class Productos extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		ProductoDAO prodDao = new ProductoDAO();
 
 		if(request.getParameter("cargar")!=null) {
 			Part archivo=request.getPart("archivo");
 			String nombre=request.getParameter("nombreArch");
 			//JOptionPane.showMessageDialog(null, archivo.getSubmittedFileName());
-			String Url="C:/Users/yenny/OneDrive/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc\\";
+			String Url="C:/Users/andre/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc\\";
 			//JOptionPane.showMessageDialog(null, Url);
 			try {
 			InputStream file= archivo.getInputStream();	
@@ -52,7 +57,7 @@ public class Productos extends HttpServlet {
 			response.sendRedirect("Productos.jsp?men=Archivo cargado Exitosamente");
 			//JOptionPane.showMessageDialog(null, "Archivo Cargado Correctamente");
 			System.out.println("Archivo Cargado Correctamente");
-			if(libDao.Cargar_Productos(Url+nombre+".csv")) {
+			if(prodDao.Cargar_Producto(Url+nombre+".csv")) {
 				System.out.println("Archivo cargado Exitosamente");
 			}
 			else {
