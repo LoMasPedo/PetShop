@@ -5,28 +5,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Tienda D.Pet Shop</title>
-<style>
-.divInicial {
-	 border: 5px solid white; 
-  border-radius: 5px; 
-  margin: auto; 
-  text-align: center;
-}
+<link rel="stylesheet" href="css/Login.css">
 
-.tablalogin {
-  margin: auto;
-}
-.botoneslogin
-{
-	margin-top:20px;
-}
-</style>
 </head>
 <body>
 	<div class="divInicial">
 		<br /> <br />
 		<img src="img/logo.jpg" width="450px" />
-		<h2>Bienvenidos a la tienda D.Pet Shop</h2>
+		<h2>Bienvenidos a la tiendas D.Pet Shop</h2>
 		<br />
 		<br />
 		<h5>Ingresa tu usuario y contraseña para continuar</h5>
