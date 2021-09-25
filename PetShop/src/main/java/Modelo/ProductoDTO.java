@@ -9,7 +9,7 @@ public class ProductoDTO {
 	private double PrecioCompra;
 	private double PrecioVenta;
 	
-	public ProductoDTO(  Long codigoProducto, double ivaCompra, Long nitProveedor, String nombreProducto,
+	public ProductoDTO(Long codigoProducto, double ivaCompra, Long nitProveedor, String nombreProducto,
 			double precioCompra, double precioVenta) {
 		
 		CodigoProducto = codigoProducto;

@@ -33,19 +33,23 @@ public class ProductoDAO {
 	}
 	
 
-	public boolean Actualizar_Producto(ProductoDTO prod) {
+	public boolean Actualizar_Producto(ProductoDTO prod) 
+	{
 	    boolean resul=false;
-		try {
-		String sql="update productos set ivacompra=?, nitproveedor=?, nombre_producto=?, precio_compra=?, precio_venta=? where codigo_producto=?";
-		ps = con.prepareStatement(sql);
-		ps.setDouble(1, prod.getIvaCompra());
-		ps.setLong(2, prod.getNitProveedor());
-		ps.setString(3, prod.getNombreProducto());
-		ps.setDouble(4, prod.getPrecioCompra());
-		ps.setDouble(5, prod.getPrecioVenta());
-		ps.setLong(6, prod.getCodigoProducto());
-		resul=ps.executeUpdate()>0;	
-		}catch(SQLException ex) {
+		try 
+		{
+			String sql="update productos set ivacompra=?, nitproveedor=?, nombre_producto=?, precio_compra=?, precio_venta=? where codigo_producto=?";
+			ps = con.prepareStatement(sql);
+			ps.setDouble(1, prod.getIvaCompra());
+			ps.setLong(2, prod.getNitProveedor());
+			ps.setString(3, prod.getNombreProducto());
+			ps.setDouble(4, prod.getPrecioCompra());
+			ps.setDouble(5, prod.getPrecioVenta());
+			ps.setLong(6, prod.getCodigoProducto());
+			resul=ps.executeUpdate()>0;
+		}
+		catch(SQLException ex) 
+		{
 			JOptionPane.showMessageDialog(null,"error al actualizar: "+ex);
 		}
 		return resul;
