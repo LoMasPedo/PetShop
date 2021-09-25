@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
-
+import Modelo.ClienteDTO;
 import Modelo.ProductoDAO;
 import Modelo.ProductoDTO;
 
@@ -43,7 +43,7 @@ public class Productos extends HttpServlet {
 			Part archivo=request.getPart("archivo");
 			String nombre=request.getParameter("nombreArch");
 			//JOptionPane.showMessageDialog(null, archivo.getSubmittedFileName());
-			String Url="C:/Users/yenny/OneDrive/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
+			String Url="C:/Users/franc/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
 			//JOptionPane.showMessageDialog(null, Url);
 			try {
 			InputStream file= archivo.getInputStream();	
@@ -58,18 +58,18 @@ public class Productos extends HttpServlet {
 			file.close();
 			System.out.println("se cargo exitosamente el archivo ");
 			response.sendRedirect("Productos.jsp?men=Archivo cargado Exitosamente");
-			//JOptionPane.showMessageDialog(null, "Archivo Cargado Correctamente");
-			System.out.println("Archivo Cargado Correctamente");
+			JOptionPane.showMessageDialog(null, "Archivo Cargado Correctamente");
+			//System.out.println("Archivo Cargado Correctamente");
 			if(prodDao.Cargar_Producto(Url+nombre+".csv")) {
 				System.out.println("Archivo cargado Exitosamente");
 			}
 			else {
-				//JOptionPane.showMessageDialog(null, "Libros no se Registraron");
-				System.out.println("Los productos del archivo no se cargaron");
+				JOptionPane.showMessageDialog(null, "Los productos del archivo no se cargaron");
+				//System.out.println("Los productos del archivo no se cargaron");
 			}
 			}catch(Exception e) {
-				//JOptionPane.showMessageDialog(null, "Error al cargar Archivo"+e);
-				System.out.println("Error al cargar Archivo"+e);
+				JOptionPane.showMessageDialog(null, "Error al cargar Archivo"+e);
+				//System.out.println("Error al cargar Archivo"+e);
 			}
 		}
 		
@@ -79,15 +79,17 @@ public class Productos extends HttpServlet {
 			String nombreProducto;
 			double ivaCompra, precioCompra, precioVenta;
 			long codigoProducto, nitProveedor;
+			
+			ProductoDTO prod=null;
+			
+			codigoProducto =Long.parseLong(request.getParameter("codP"));
+			ivaCompra =Double.parseDouble(request.getParameter("IvaC"));
+			nitProveedor =prod.getNitProveedor();
+			nombreProducto = request.getParameter("NomC");
+			precioCompra =Double.parseDouble(request.getParameter("preC"));
+			precioVenta =prod.getPrecioVenta();
 		
-			codigoProducto =Long.parseLong(request.getParameter("cod"));
-			ivaCompra =Double.parseDouble(request.getParameter("iva"));
-			nitProveedor =Long.parseLong(request.getParameter("nitProveedor"));
-			nombreProducto = request.getParameter("producto");
-			precioCompra =Double.parseDouble(request.getParameter("precioCompra"));
-			precioVenta =Double.parseDouble(request.getParameter(" precioVenta"));
-		
-			ProductoDTO prodDto_Act = new ProductoDTO(codigoProducto, ivaCompra, nitProveedor,nombreProducto, precioCompra,precioVenta);
+			ProductoDTO prodDto_Act = new ProductoDTO(codigoProducto,ivaCompra, nitProveedor,nombreProducto, precioCompra,precioVenta);
 			
 			if(prodDao.Actualizar_Producto(prodDto_Act)) {
 			JOptionPane.showMessageDialog(null, "producto se Actualizo Exitosamente.");
@@ -100,6 +102,33 @@ public class Productos extends HttpServlet {
 			}
 		
 		}
+	
+		if(request.getParameter("consultar")!=null) {
+			String nombreProducto;
+			double ivaCompra, precioCompra; //precioVenta;
+			long codigoProducto; //nitProveedor;
+			
+			codigoProducto=Long.parseLong(request.getParameter("cod"));
+			ProductoDTO ProDTO=prodDao.Consultar_Producto(codigoProducto);
+			
+			if(ProDTO!=null) {	
+				codigoProducto=ProDTO.getCodigoProducto();
+				ivaCompra = ProDTO.getIvaCompra();
+				//nitProveedor = ProDTO.getNitProveedor();
+				nombreProducto = ProDTO.getNombreProducto();
+				precioCompra = ProDTO.getPrecioCompra();
+				//precioVenta = ProDTO.getPrecioVenta();
+				
+				response.sendRedirect("Productos.jsp?codP="+codigoProducto+"&&IvaC="+ivaCompra+"&&NomC="+nombreProducto
+						+"&&PreC="+precioCompra);
+				}else
+				{
+					response.sendRedirect("Clientes.jsp?men=Cliente no existe.");
+				}
+		}
+	
+	
+	
 	}	
 }
 

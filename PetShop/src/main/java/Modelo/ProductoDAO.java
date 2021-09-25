@@ -25,8 +25,8 @@ public class ProductoDAO {
 		//ps.setString(1, Url);
 		resul=ps.executeUpdate()>0;
 		}catch(SQLException ex) {
-			//JOptionPane.showMessageDialog(null,"error al insertar Productos: "+ex);
-			System.out.println("Error al insertar productos"+ex);
+			JOptionPane.showMessageDialog(null,"error al insertar Productos: "+ex);
+			//System.out.println("Error al insertar productos"+ex);
 		}
 		return resul;
 		
@@ -56,16 +56,16 @@ public class ProductoDAO {
 		
 		ProductoDTO prod= null;
 		try {
-		String sql="select ivacompra,nitproveedor,nombre_producto,precio_compra, precio_venta from productos where codigo_producto=?";	
+		String sql="select * from productos where codigo_producto=?";			
 		ps=con.prepareStatement(sql);
 		ps.setLong(1, codigo_Producto);
 		res=ps.executeQuery();
 		while(res.next()) {
-			prod = new ProductoDTO(res.getLong(1),res.getDouble(2),res.getLong(3),res.getString(4),res.getDouble(5),res.getDouble(6) );
+			prod = new ProductoDTO(res.getLong(1),res.getDouble(2),res.getLong(3),res.getString(4),res.getDouble(5),res.getDouble(6));
 		}
 		}catch(SQLException e) {
-			//JOptionPane.showMessageDialog(null,"Error al consultar" +e);
-			System.out.println("Error al consultar" +e);
+			JOptionPane.showMessageDialog(null,"Error al consultar" +e);
+			//System.out.println("Error al consultar" +e);
 
 		}
 	

@@ -57,8 +57,7 @@ public class Clientes extends HttpServlet {
 			}
 		}
 		
-		if(request.getParameter("consultar")!=null) 
-		{
+		if(request.getParameter("consultar")!=null) {
 			Long cedulaCliente; 
 			String direccionCliente,emailCliente,nombreCliente,telefonoCliente;
 			
