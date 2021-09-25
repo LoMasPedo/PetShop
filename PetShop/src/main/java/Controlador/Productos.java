@@ -12,9 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.swing.JOptionPane;
 
 
 import Modelo.ProductoDAO;
+import Modelo.ProductoDTO;
+
 
 
 
@@ -40,7 +43,7 @@ public class Productos extends HttpServlet {
 			Part archivo=request.getPart("archivo");
 			String nombre=request.getParameter("nombreArch");
 			//JOptionPane.showMessageDialog(null, archivo.getSubmittedFileName());
-			String Url="C:/Users/andre/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc\\";
+			String Url="C:/Users/yenny/OneDrive/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
 			//JOptionPane.showMessageDialog(null, Url);
 			try {
 			InputStream file= archivo.getInputStream();	
@@ -70,9 +73,34 @@ public class Productos extends HttpServlet {
 			}
 		}
 		
-
-		}
 		
+
+		if(request.getParameter("actualizar")!=null) {
+			String nombreProducto;
+			double ivaCompra, precioCompra, precioVenta;
+			long codigoProducto, nitProveedor;
+		
+			codigoProducto =Long.parseLong(request.getParameter("cod"));
+			ivaCompra =Double.parseDouble(request.getParameter("iva"));
+			nitProveedor =Long.parseLong(request.getParameter("nitProveedor"));
+			nombreProducto = request.getParameter("producto");
+			precioCompra =Double.parseDouble(request.getParameter("precioCompra"));
+			precioVenta =Double.parseDouble(request.getParameter(" precioVenta"));
+		
+			ProductoDTO prodDto_Act = new ProductoDTO(codigoProducto, ivaCompra, nitProveedor,nombreProducto, precioCompra,precioVenta);
+			
+			if(prodDao.Actualizar_Producto(prodDto_Act)) {
+			JOptionPane.showMessageDialog(null, "producto se Actualizo Exitosamente.");
+			response.sendRedirect("Productos.jsp?men=Producto Actualizado Exitosamente.");
+			}else {
+			
+			JOptionPane.showMessageDialog(null, "El Producto no se Modifico.");
+			
+			response.sendRedirect("Productos.jsp?men=El Producto no se Modifico.");
+			}
+		
+		}
+	}	
 }
 
 
