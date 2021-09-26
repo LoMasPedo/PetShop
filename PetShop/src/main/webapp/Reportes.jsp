@@ -12,5 +12,23 @@
 <jsp:include page="Header.jsp" />
 
 <h1>Modulo Reportes</h1>
+
+
+
+
+
+<style>
+
+h1{
+  text-align:center;
+  font-family:monospace
+  text-transform: uppercase;
+  font-weight: 50;
+  color: #2ba3ac; 
+  }
+  
+</style>
+
+
 </body>
 </html>

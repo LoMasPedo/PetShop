@@ -43,7 +43,8 @@ public class Productos extends HttpServlet
 			String nombre=request.getParameter("nombreArch");
 			//JOptionPane.showMessageDialog(null, archivo.getSubmittedFileName());
 			//String Url="C:/Users/franc/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
-			String Url="C:/Users/andre/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
+			//String Url="C:/Users/andre/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
+			String Url="C:/Users/HP/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
 			//JOptionPane.showMessageDialog(null, Url);
 			
 			try 

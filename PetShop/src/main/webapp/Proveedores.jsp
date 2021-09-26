@@ -60,6 +60,14 @@ if(request.getParameter("men")!=null)
  margin: 10px;
 }
 
+h1{
+  text-align:center;
+  font-family:monospace
+  text-transform: uppercase;
+  font-weight: 50;
+  color: #2ba3ac; 
+  }
+  
 .labelformulario
 {
 min-width: 150px;

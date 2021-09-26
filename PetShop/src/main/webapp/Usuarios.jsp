@@ -6,6 +6,7 @@
 	
 <meta charset="ISO-8859-1">
 <title>D Pet Shop</title>
+
 </head>
 <body>
 
@@ -43,6 +44,17 @@ if(request.getParameter("men")!=null){
 %>
 
 <style>
+
+h1{
+  text-align:center;
+  font-family:monospace
+  text-transform: uppercase;
+  font-weight: 50;
+  color: #2ba3ac; 
+  }
+
+
+
 .padre {
   height: auto;
   /*IMPORTANTE*/

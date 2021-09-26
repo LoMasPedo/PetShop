@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 /**
  * Servlet implementation class Login
@@ -32,10 +33,12 @@ public class Login extends HttpServlet {
 		if(request.getParameter("enviar")!=null) {
 			usuario=request.getParameter("user");
 			password=request.getParameter("pass");
+			
 			if(usuario.equals("admininicial")&& password.equals("admin123456")) {
 				response.sendRedirect("index.jsp?nom="+usuario);
+			
 			}else
-				//println("Usuario o contraseña Errada");
+				//JOptionPane.showMessageDialog(null,"Usuario o Password Errado");
 				response.sendRedirect("login.jsp");
 			
 		}else

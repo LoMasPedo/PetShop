@@ -9,6 +9,8 @@
 .saludo{
 
 text-align: center;
+font-size:25px;
+color: #8b61c3; 
 }
 
 </style>

@@ -82,7 +82,20 @@ if(request.getParameter("men")!=null)
 		<div  class="divformulario">
 			<input class="botonformulario" type="submit" name="consultar" value="Consultar" >
 			<input class="botonformulario" type="submit" name="actualizar" value="Actualizar" >
-		</div>		
+		</div>	
+		
+	
+	<style>
+	
+h1{
+  text-align:center;
+  font-family:monospace
+  text-transform: uppercase;
+  font-weight: 50;
+  color: #2ba3ac; 
+  }
+  
+</style>	
 	</fieldset>
 </form>
 </body>
