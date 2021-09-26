@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 import Modelo.ClienteDAO;
 import Modelo.ClienteDTO;
@@ -90,35 +91,45 @@ public class Clientes extends HttpServlet {
 			nombreCliente = request.getParameter("nombre_cliente");
 			telefonoCliente = request.getParameter("telefono_cliente");
 			
+			int op = JOptionPane.showConfirmDialog(null, "Desea Actualizar el Cliente: " + cedula_cliente,
+					"YES_NO_OPTION", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+			if (op == 0) {
+			
+				
 			ClienteDTO clienDto_Act = new ClienteDTO(cedula_cliente,direccionCliente,emailCliente,nombreCliente,telefonoCliente);
 			if(clienDao.Actualizar_Cliente(clienDto_Act)) 
-			{
+				{
 				//JOptionPane.showMessageDialog(null, "El Usuario Actualizo Exitosamente.");
 				System.out.println("Se actualizo el cliente");
 				response.sendRedirect("Clientes.jsp?men=Cliente Actualizado Exitosamente.");
-			}
-			else 
+				}
+			   }else 
 			{
-				//JOptionPane.showMessageDialog(null, "El Usuario no se Modifico.");
-				System.out.println("el cliente no se actualizo");
-				response.sendRedirect("Clientes.jsp?men=El cliente no se Modifico.");
-			}
+				JOptionPane.showMessageDialog(null, "El cliente no se Actualizo.");
+				//System.out.println("el cliente no se actualizo");
+				response.sendRedirect("Clientes.jsp?men=El cliente no se Actualizo.");
+			 }
 		}
+		
 		
 		if(request.getParameter("eliminar")!=null) 
 		{
 			long cedula_cliente;
 			cedula_cliente =Long.parseLong( request.getParameter("cedula_cliente"));
-			//int op=JOptionPane.showConfirmDialog(null, "Desea Eliminar el Usuario digitado:" + Cedula_usuario );
-			//if(op==0) {
-			if(clienDao.Eliminar_Cliente(cedula_cliente)) 
-			{
-				System.out.println("Se eliminio el cliente");
-				response.sendRedirect("Clientes.jsp?men=Cliente Eliminado");
+			
+			int op = JOptionPane.showConfirmDialog(null, "Desea Eliminar el usuario: " + cedula_cliente,
+					"YES_NO_OPTION", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+			if (op == 0) {
+			
+				if(clienDao.Eliminar_Cliente(cedula_cliente)) 
+				{
+					//System.out.println("Se eliminio el cliente");
+					response.sendRedirect("Clientes.jsp?men=Cliente Eliminado");
+				}
 			}
 			else 
 			{
-				System.out.println("cliente no se elimino");
+				//System.out.println("cliente no se elimino");
 				response.sendRedirect("Clientes.jsp?men=El Cliente no se elimino.");
 			}
 		    /*	}else {

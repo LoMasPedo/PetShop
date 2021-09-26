@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 import Modelo.ProveedoresDAO;
 import Modelo.ProveedoresDTO;
@@ -86,34 +87,42 @@ public class Proveedores extends HttpServlet {
 			Nombre_Proveedor = request.getParameter("Nombre_Proveedor");
 			Telefono_Proveedor = request.getParameter("Telefono_Proveedor");
 			
+			int op = JOptionPane.showConfirmDialog(null, "Desea Actualizar el usuario: " + Nit_Proveedor,
+					"YES_NO_OPTION", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+			if (op == 0) {			
+			
 			ProveedoresDTO libDto_Act = new ProveedoresDTO (Nit_Proveedor, Ciudad_Proveedor, Direccion_Proveedor, Nombre_Proveedor, Telefono_Proveedor);
 			if(proveedoresDAO.Actualizar_Proveedores(libDto_Act)) {
-				//JOptionPane.showMessageDialog(null, "El Usuario Actualizo Exitosamente.");
-				System.out.println("se actualizo el proveedor");
+				JOptionPane.showMessageDialog(null, "El Proveedor se Actualizo Exitosamente.");
+				//System.out.println("se actualizo el proveedor");
 				response.sendRedirect("Proveedores.jsp?men=Proveedor Actualizado Exitosamente.");
-			}else {
-				//JOptionPane.showMessageDialog(null, "El Usuario no se Modifico.");
-				System.out.println("el proveedor no se actualizo");
-				response.sendRedirect("Proveedores.jsp?men=El proveedor no se Modifico.");
-			}
-			}
+					}
+				}else {
+					JOptionPane.showMessageDialog(null, "El Proveedor no se Actualizo.");
+					//System.out.println("el proveedor no se actualizo");
+					response.sendRedirect("Proveedores.jsp?men=El proveedor no se Actualizo.");
+				}
+		}
 		
 		if(request.getParameter("eliminar")!=null) {
 			long Nit_Proveedor;
 			Nit_Proveedor =Long.parseLong( request.getParameter("Nit_Proveedor"));
-			//int op=JOptionPane.showConfirmDialog(null, "Desea Eliminar el Usuario digitado:" + Cedula_usuario );
-			//if(op==0) {
-			if(proveedoresDAO.Eliminar_Proveedores(Nit_Proveedor)) {
-				System.out.println("se eliminio el proveedor");
+			
+			int op = JOptionPane.showConfirmDialog(null, "Desea Eliminar el Proveedor: " + Nit_Proveedor,
+					"YES_NO_OPTION", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+			if (op == 0) {
+				if(proveedoresDAO.Eliminar_Proveedores(Nit_Proveedor)) {
+				//System.out.println("se eliminio el proveedor");
 				response.sendRedirect("Proveedores.jsp?men=Proveedor Eliminado");
-			}else {
-				System.out.println("Proveedor no se elimino");
-				response.sendRedirect("Proveedores.jsp?men=El proveedor no se elimino.");
 			}
+				}else {
+					//System.out.println("Proveedor no se elimino");
+					response.sendRedirect("Proveedores.jsp?men=El proveedor no se elimino.");
+				
 		    /*	}else {
 				response.sendRedirect("Usuarios.jsp");
 			}*/
-					
+			}		
 		}
 	}
 		

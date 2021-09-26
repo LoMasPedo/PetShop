@@ -37,12 +37,14 @@ public class Login extends HttpServlet {
 			if(usuario.equals("admininicial")&& password.equals("admin123456")) {
 				response.sendRedirect("index.jsp?nom="+usuario);
 			
-			}else
-				//JOptionPane.showMessageDialog(null,"Usuario o Password Errado");
+			}else {
+				JOptionPane.showMessageDialog(null,"Usuario o Password Errado");
 				response.sendRedirect("login.jsp");
+			}
 			
-		}else
+		}else {
 			response.sendRedirect("login.jsp");
+			}
 		
 	}
 
