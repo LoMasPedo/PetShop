@@ -8,9 +8,11 @@
 	outline: none;
 }
 
+
+
 body {
-	
-	margin: 0px;
+	background-image: url("css/Fondo.jpg");
+	margin:0px;
 	padding: 0px;
 	font-family: 'Open Sans', sans-serif;
 }

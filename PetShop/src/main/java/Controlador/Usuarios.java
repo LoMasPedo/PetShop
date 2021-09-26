@@ -99,6 +99,7 @@ public class Usuarios extends HttpServlet {
 			Cedula_usuario =Long.parseLong( request.getParameter("Cedula_usuario"));
 			//int op=JOptionPane.showConfirmDialog(null, "Desea Eliminar el Usuario digitado:" + Cedula_usuario );
 			//if(op==0) {
+			System.out.println("Seguro que desea eliminar al usuario:"+ Cedula_usuario);
 			if(usuarioDao.Eliminar_Usuario(Cedula_usuario)) {
 				System.out.println("se eliminio el usuario");
 				response.sendRedirect("Usuarios.jsp?men=Usuario Eliminado");

@@ -52,6 +52,7 @@ public class UsuarioDAO {
 
 	public boolean Eliminar_Usuario(Long Cedula_usuario) {
 	    boolean resul=false;
+	    
 		try {
 		String sql="delete from usuarios where Cedula_usuario=?";
 		ps = con.prepareStatement(sql);

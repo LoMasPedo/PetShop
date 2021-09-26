@@ -91,10 +91,10 @@ h1{
   text-align:center;
   font-family:monospace
   text-transform: uppercase;
-  font-weight: 50;
-  color: #2ba3ac; 
+  font-weight: 70px;
+  font-size: 30px;
+  color: #8b61c3; 
   }
-  
 </style>	
 	</fieldset>
 </form>
