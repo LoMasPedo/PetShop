@@ -6,6 +6,7 @@
 	
 <meta charset="ISO-8859-1">
 <title>D Pet Shop</title>
+<link rel="stylesheet" href="css/Opciones.css">
 </head>
 <body>
 
@@ -43,56 +44,6 @@ if(request.getParameter("men")!=null)
 }
 %>
 
-<style>
-.padre {
-  height: auto;
-  /*IMPORTANTE*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*border:1px solid gray;*/
-}
-
-.hijo {
-  width: 400px;
-}
-.divformulario{
- margin: 10px;
-}
-
-h1{
-  text-align:center;
-  font-family:monospace
-  text-transform: uppercase;
-  font-weight: 70px;
-  font-size: 30px;
-  color: #8b61c3; 
-  }
-  
-  
-.labelformulario
-{
-min-width: 150px;
-display:inline-block;
-}
-.botonformulario{
-     display: inline-block;
-    font-weight: 400;
-    text-align: center;
-  
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    color: #fff;
-    background-color: #2ba3ac;
-    margin:10px;
-      
- 
-}
-
-</style>
 <div class="padre">
 <div class="hijo">
 <h2><%=mensaje %></h2>

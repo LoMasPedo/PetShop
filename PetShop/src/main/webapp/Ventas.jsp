@@ -6,6 +6,7 @@
 	
 <meta charset="ISO-8859-1">
 <title>D Pet Shop</title>
+<link rel="stylesheet" href="css/Opciones.css">
 </head>
 <body>
 
@@ -14,21 +15,5 @@
 <h1>Modulo Ventas</h1>
 
 
-
-
-
-<style>
-
-
-h1{
-  text-align:center;
-  font-family:monospace
-  text-transform: uppercase;
-  font-weight: 70px;
-  font-size: 30px;
-  color: #8b61c3; 
-  }
-  
-</style>
 </body>
 </html>

@@ -17,8 +17,9 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+
 section {
-	width: 100%;
+	width: auto;
 	max-width: 1200px;
 	margin: 0px auto;
 	display: table;
@@ -32,27 +33,30 @@ header {
 	margin-bottom: 50px;
 }
 
-#logo {
-	float: left;
-	font-size: 24px;
-	text-transform: uppercase;
-	color: #eb737b;
-	font-weight: 600;
-	padding: 20px 0px;
+#logomenu {
+	display: block;
+	margin-left: auto;
+  margin-right: auto;
+  border-radius: 210px;
+	
 }
 
 nav {
-	width: auto;
-	float: right;
+width: auto;
+height: 60px;
+	text-align: center;
+	padding:1px;
 }
 
 nav ul {
 	display: table;
-	float: right;
+	list-style: none;
+        display: inline-block;
 }
 
 nav ul li {
-	float: left;
+	  display: inline-block;
+    float:left; 
 }
 
 nav ul li:last-child {
@@ -61,13 +65,15 @@ nav ul li:last-child {
 
 nav ul li a {
 	color: #ecf0f1;
-	font-size: 18px;
+	font-size: 20px;
 	padding: 25px 20px;
+	border-radius: 100px;
 	display: inline-block;
 	transition: all 0.5s ease 0s;
 }
 
 nav ul li a:hover {
+border-radius: 100px;
 	background-color: #eb737b;
 	color: #ecf0f1;
 	font-weight: bolder;
@@ -202,9 +208,10 @@ footer {
 	}
 }
 </style>	
-<img src="img/logo.jpg" width="450px" />
+<img id="logomenu" src="img/logo.jpg" width="450px" />
 <header>
 	<section>
+	<!--  -->
 		<label for="toggle-1" class="toggle-menu" style="display:none;">
 			<ul>
 				<li></li>

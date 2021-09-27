@@ -6,7 +6,7 @@
 	
 <meta charset="ISO-8859-1">
 <title>D Pet Shop</title>
-
+<link rel="stylesheet" href="css/Opciones.css">
 </head>
 <body>
 
@@ -41,7 +41,9 @@ if(request.getParameter("men")!=null)
 	mensaje=request.getParameter("men");
 }
 %>
-
+<div class="padre">
+<div class="hijo">
+<h2><%=mensaje %></h2>
 <form action="Productos" method="post" enctype="multipart/form-data">
 	<div>
 		<label>Nombre del achivo:</label><input type="text" name="nombreArch">
@@ -83,20 +85,10 @@ if(request.getParameter("men")!=null)
 			<input class="botonformulario" type="submit" name="consultar" value="Consultar" >
 			<input class="botonformulario" type="submit" name="actualizar" value="Actualizar" >
 		</div>	
-		
-	
-	<style>
-	
-h1{
-  text-align:center;
-  font-family:monospace
-  text-transform: uppercase;
-  font-weight: 70px;
-  font-size: 30px;
-  color: #8b61c3; 
-  }
-</style>	
+			
 	</fieldset>
 </form>
+</div>
+</div>
 </body>
 </html>
