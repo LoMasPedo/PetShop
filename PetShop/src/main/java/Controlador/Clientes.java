@@ -2,6 +2,9 @@ package Controlador;
 
 
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -72,9 +75,11 @@ public class Clientes extends HttpServlet {
 				nombreCliente = clien.getNombre_cliente();
 				telefonoCliente = clien.getTelefono_cliente();
 				
-				response.sendRedirect("Clientes.jsp?cedula_cliente="+cedulaCliente+"&&direccion_cliente="+direccionCliente+"&&email_cliente="+emailCliente
-						+"&&nombre_cliente="+nombreCliente+"&&telefono_cliente="+telefonoCliente);
-				}else
+				response.sendRedirect("Clientes.jsp?cedula_cliente="+cedulaCliente+"&&direccion_cliente="+URLEncoder.encode(direccionCliente, StandardCharsets.UTF_8)+"&&email_cliente="+URLEncoder.encode(emailCliente, StandardCharsets.UTF_8)
+						+"&&nombre_cliente="+URLEncoder.encode(nombreCliente, StandardCharsets.UTF_8)+"&&telefono_cliente="+URLEncoder.encode(telefonoCliente, StandardCharsets.UTF_8));
+		
+			
+			}else
 				{
 					response.sendRedirect("Clientes.jsp?men=Cliente no existe.");
 				}
