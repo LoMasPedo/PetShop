@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 import Modelo.ProveedoresDAO;
 import Modelo.ProveedoresDTO;
@@ -69,7 +71,7 @@ public class Proveedores extends HttpServlet {
 			Nombre_Proveedor = lib.getNombre_Proveedor();
 			Telefono_Proveedor = lib.getTelefono_Proveedor();
 			response.sendRedirect("Proveedores.jsp?Nit_Proveedor="+Nit_Proveedor+"&&Ciudad_Proveedor="+Ciudad_Proveedor+"&&Direccion_Proveedor="
-			+Direccion_Proveedor+"&&Nombre_Proveedor="+Nombre_Proveedor+"&&Telefono_Proveedor="+Telefono_Proveedor);
+			+URLEncoder.encode(Direccion_Proveedor, StandardCharsets.UTF_8)+"&&Nombre_Proveedor="+URLEncoder.encode(Nombre_Proveedor, StandardCharsets.UTF_8)+"&&Telefono_Proveedor="+Telefono_Proveedor);
 			}else
 			{
 				response.sendRedirect("Proveedores.jsp?men=El proveedor no existe");
@@ -93,7 +95,7 @@ public class Proveedores extends HttpServlet {
 			
 			ProveedoresDTO libDto_Act = new ProveedoresDTO (Nit_Proveedor, Ciudad_Proveedor, Direccion_Proveedor, Nombre_Proveedor, Telefono_Proveedor);
 			if(proveedoresDAO.Actualizar_Proveedores(libDto_Act)) {
-				JOptionPane.showMessageDialog(null, "El Proveedor se Actualizo Exitosamente.");
+				//JOptionPane.showMessageDialog(null, "El Proveedor se Actualizo Exitosamente.");
 				//System.out.println("se actualizo el proveedor");
 				response.sendRedirect("Proveedores.jsp?men=Proveedor Actualizado Exitosamente.");
 					}
