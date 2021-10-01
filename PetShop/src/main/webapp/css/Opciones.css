@@ -67,8 +67,8 @@ h1{
 
 legend{
 	/*color:#8b61c3;*/
-	color: white;
-	text-shadow: -2px -2px 2px gray;
+	color: gray;
+	text-shadow: white;
 }
 
 .labelformulario
