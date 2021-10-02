@@ -6,7 +6,7 @@
 	
 <meta charset="ISO-8859-1">
 <title>D Pet Shop</title>
-<link rel="stylesheet" href="css/Opciones.css">
+<link rel="stylesheet" href="css/Ventas.css">
 </head>
 <body>
 

@@ -7,6 +7,9 @@
 <meta charset="ISO-8859-1">
 <title>D Pet Shop</title>
 <link rel="stylesheet" href="css/Opciones.css">
+
+
+
 </head>
 <body>
 
@@ -44,14 +47,45 @@ if(request.getParameter("men")!=null)
 <div class="padre">
 <div class="hijo">
 <h2><%=mensaje %></h2>
+
+
+<script type="text/javascript">
+$( document ).ready(function() {
+	const file = document.querySelector('#file');
+	file.addEventListener('change', (e) => {
+	  const [file] = e.target.files;
+	  document.querySelector('.file-name').textContent = file.name;
+	});
+
+});
+</script>
+
 <form action="Productos" method="post" enctype="multipart/form-data">
-	<div>
-		<label>Nombre del achivo:</label><input type="text" name="nombreArch">
-		<input type="file" value="Examinar" name="archivo">
-	</div>
-	<div>
-		<input type="submit" name="cargar" value="Cargar">
-	</div>	
+   <fieldset>
+      <legend>Cargar Archivo</legend>
+      <div class="divformulario">
+         <label>Nombre del archivo:</label>
+         <input type="text" name="nombreArch" class="input-nombre-archivo">
+      </div>
+      <div>
+         <table class="tabla-input">
+            <tr>
+               <th>
+                  <label class="custom-file-upload">
+                  	<input type="file" value="Examinar" name="archivo" id="file">
+                 	 <span> Seleccione el archivo </span>
+                  </label>
+               </th>
+               <th>
+                  <p class="file-name"></p>
+               </th>
+            </tr>
+         </table>
+      </div>
+      <div>
+         <input type="submit" name="cargar" class="botonformulario boton-cargar" value="Cargar">
+      </div>
+   </fieldset>
 </form>
 
 <h2><%=mensaje%></h2>
