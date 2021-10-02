@@ -31,7 +31,7 @@ header {
 	width: 100%;
 	display: table;
 	background-color: #2ba3ac;
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 }
 
 #logomenu {
