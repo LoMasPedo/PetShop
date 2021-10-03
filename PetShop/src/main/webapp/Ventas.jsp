@@ -17,10 +17,10 @@
 <%!
 String mensaje="";
 int canT1,canT2,canT3;
-float vlrT1,vlrT2,vlrT3,totalVenta,totalIva,totalConIva;
-long cedulaCliente = 0, codigoProducto1,codigoProducto2,codigoProducto3;
+float vlrT1,vlrT2,vlrT3,totalVenta,totalIva,totalConIva,vlrU1,vlrU2,vlrU3;
+long cedulaCliente = 0, cedulaUsuario=0, codigoProducto1,codigoProducto2,codigoProducto3;
 String NombreProducto1, NombreProducto2, NombreProducto3;
-String estado="enabled",nombreCliente,conSec;
+String estado="enabled",nombreCliente,nombreUsuario,conSec;
 %>
 
 <%
@@ -32,6 +32,13 @@ if(request.getParameter("cedula_cliente")!=null)
 	estado="enabled";
 }
 
+if(request.getParameter("cedula_usuario")!=null)
+{
+	cedulaUsuario=Long.parseLong(request.getParameter("cedula_usuario"));
+	mensaje="";
+	estado="enabled";
+}
+
 if(request.getParameter("nombre_cliente")!=null)
 {
 	nombreCliente=request.getParameter("nombre_cliente");
@@ -39,6 +46,12 @@ if(request.getParameter("nombre_cliente")!=null)
 	estado="enabled";
 }
 
+if(request.getParameter("nombre_usuario")!=null)
+{
+	nombreUsuario=request.getParameter("nombre_usuario");
+	mensaje="";
+	estado="enabled";
+}
 
 
 if(request.getParameter("consec")!=null)
@@ -73,6 +86,13 @@ if(request.getParameter("vlrt1")!=null)
 	estado="enabled";
 }
 
+if(request.getParameter("vlru1")!=null)
+{
+	vlrU1=Float.parseFloat(request.getParameter("vlru1"));
+	mensaje="";
+	estado="enabled";
+}
+
 if(request.getParameter("nomP2")!=null)
 {
 	NombreProducto2=request.getParameter("nomP2");
@@ -90,6 +110,13 @@ if(request.getParameter("codP2")!=null)
 if(request.getParameter("vlrt2")!=null)
 {
 	vlrT2=Float.parseFloat(request.getParameter("vlrt2"));
+	mensaje="";
+	estado="enabled";
+}
+
+if(request.getParameter("vlru2")!=null)
+{
+	vlrU2=Float.parseFloat(request.getParameter("vlru2"));
 	mensaje="";
 	estado="enabled";
 }
@@ -115,10 +142,23 @@ if(request.getParameter("vlrt3")!=null)
 	estado="enabled";
 }
 
+if(request.getParameter("vlru3")!=null)
+{
+	vlrU3=Float.parseFloat(request.getParameter("vlru3"));
+	mensaje="";
+	estado="enabled";
+}
 
 if(request.getParameter("men")!=null)
 {
 	cedulaCliente=0;
+	mensaje=request.getParameter("men");
+	estado="enabled";
+}
+
+if(request.getParameter("men")!=null)
+{
+	cedulaUsuario=0;
 	mensaje=request.getParameter("men");
 	estado="enabled";
 }
@@ -136,8 +176,33 @@ if(request.getParameter("men")!=null)
 			
 		<table class="no-bordes">
 		   <tr>
+		      
+		      
 		      <th>
-		         <label class="labelformulario" >Cedula: </label>
+		         <label class="labelformulario" >Cedula Usuario: </label>
+		      </th>
+		      <th>
+		         <input type="number" name="cedula_usuario" value="<%=cedulaUsuario%>" required <%=estado%>>
+		      </th>
+		      <th>
+		         <input class="botonformulario" type="submit" name="consultar_usuario" value="Consultar Usuario" >
+		      </th>
+		      <th>
+		         <label class="labelformulario">Usuario: </label>
+		      </th>
+		      <th>
+		         <input   type="text" name="nombre_usuario" value="<%=nombreUsuario%>" required>
+		      </th>
+		      <th>
+		         <label class="labelformulario">Consec: </label>
+		      </th>
+		      <th>
+		         <input  type="text" name="consec" value="<%=conSec%>" required>
+		      </th>
+			</tr>
+		    <tr>
+		      <th>
+		         <label class="labelformulario" >Cedula Cliente: </label>
 		      </th>
 		      <th>
 		         <input type="number" name="cedula_cliente" value="<%=cedulaCliente%>" required <%=estado%>>
@@ -151,21 +216,14 @@ if(request.getParameter("men")!=null)
 		      <th>
 		         <input   type="text" name="nombre_cliente" value="<%=nombreCliente%>" required>
 		      </th>
-		      <th>
-		         <label class="labelformulario">Consec: </label>
-		      </th>
-		      <th>
-		         <input  type="text" name="consec" value="<%=conSec%>" required>
-		      </th>
+		      
+		      
 		   </tr>
 		</table>
 		
 		<br/>
 		
-		<div  class="divformulario">
-					<label class="labelformulario">Nombre: </label>
-					<input  type="text" name="nombre_cliente" value="<%=nombreCliente%>" required>
-		</div>
+
 		
 		
 		<br/>
@@ -175,6 +233,7 @@ if(request.getParameter("men")!=null)
 			<th><th>
 			<th>Nombre Producto<th>
 			<th class="cantidad">Cant.<th>
+			<th>Vlr. Unitario.<th>
 			<th>Vlr. Total.<th>
 		</tr>
 		<tr>
@@ -191,8 +250,12 @@ if(request.getParameter("men")!=null)
 				<input type="number" name="cantidadp1" value="<%=canT1%>" required>
 			<th>
 			<th>
+				<input type="number" name="vlru1" value="<%=vlrU1%>" required>
+			<th>
+			<th>
 				<input type="number" name="vlrt1" value="<%=vlrT1%>" required>
 			<th>
+			
 		</tr>
 		<tr>
 			<th>
@@ -208,8 +271,12 @@ if(request.getParameter("men")!=null)
 				<input type="number" name="cantidadp2" value="<%=canT2%>" required>
 			<th>
 			<th>
+				<input type="number" name="vlru2" value="<%=vlrU2%>" required>
+			<th>
+			<th>
 				<input type="number" name="vlrt2" value="<%=vlrT2%>" required>
 			<th>
+			
 		</tr>
 		<tr>
 			<th>
@@ -225,8 +292,12 @@ if(request.getParameter("men")!=null)
 				<input type="number" name="cantidadp3" value="<%=canT3%>" required>
 			<th>
 			<th>
+				<input type="number" name="vlru3" value="<%=vlrU3%>" required>
+			<th>
+			<th>
 				<input type="number" name="vlrt3" value="<%=vlrT3%>" required>
 			<th>
+			
 		</tr>
 		
 		
@@ -249,14 +320,15 @@ if(request.getParameter("men")!=null)
 			</th>
 		</tr>
 		<tr>
-			<th><input class="botonformulario" type="submit" name="confirmas" value="Confirmar" > </th>
 			<th> Total Con Iva</th>
 			<th> 
 				<input type="number" name="totalconiva" value="<%=totalConIva%>" required> 
 			</th>
 		</tr>
 		
-	
+			<th><input class="botonformulario" type="submit" name="calcular" value="Calcular" > </th>
+			<th><input class="botonformulario" type="submit" name="confirmar" value="Confirmar" > </th>
+		
 	</table>
 	</div>
 	
