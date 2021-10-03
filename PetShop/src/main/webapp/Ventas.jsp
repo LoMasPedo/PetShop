@@ -24,6 +24,14 @@ String estado="enabled",nombreCliente,conSec;
 %>
 
 <%
+
+if(request.getParameter("cedula_cliente")!=null)
+{
+	cedulaCliente=Long.parseLong(request.getParameter("cedula_cliente"));
+	mensaje="";
+	estado="enabled";
+}
+
 if(request.getParameter("nombre_cliente")!=null)
 {
 	nombreCliente=request.getParameter("nombre_cliente");
@@ -49,6 +57,15 @@ if(request.getParameter("nomP1")!=null)
 	estado="enabled";
 }
 
+if(request.getParameter("codP1")!=null)
+{
+	codigoProducto1=Long.parseLong(request.getParameter("codP1"));
+	mensaje="";
+	estado="enabled";
+}
+
+
+
 if(request.getParameter("vlrt1")!=null)
 {
 	vlrT1=Float.parseFloat(request.getParameter("vlrt1"));
@@ -58,28 +75,42 @@ if(request.getParameter("vlrt1")!=null)
 
 if(request.getParameter("nomP2")!=null)
 {
-	NombreProducto1=request.getParameter("nomP1");
+	NombreProducto2=request.getParameter("nomP2");
+	mensaje="";
+	estado="enabled";
+}
+if(request.getParameter("codP2")!=null)
+{
+	codigoProducto2=Long.parseLong(request.getParameter("codP2"));
 	mensaje="";
 	estado="enabled";
 }
 
+
 if(request.getParameter("vlrt2")!=null)
 {
-	vlrT1=Float.parseFloat(request.getParameter("vlrt1"));
+	vlrT2=Float.parseFloat(request.getParameter("vlrt2"));
 	mensaje="";
 	estado="enabled";
 }
 
 if(request.getParameter("nomP3")!=null)
 {
-	NombreProducto1=request.getParameter("nomP1");
+	NombreProducto3=request.getParameter("nomP3");
+	mensaje="";
+	estado="enabled";
+}
+
+if(request.getParameter("codP3")!=null)
+{
+	codigoProducto3=Long.parseLong(request.getParameter("codP3"));
 	mensaje="";
 	estado="enabled";
 }
 
 if(request.getParameter("vlrt3")!=null)
 {
-	vlrT1=Float.parseFloat(request.getParameter("vlrt1"));
+	vlrT3=Float.parseFloat(request.getParameter("vlrt3"));
 	mensaje="";
 	estado="enabled";
 }
