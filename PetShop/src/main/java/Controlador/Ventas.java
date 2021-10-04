@@ -62,18 +62,6 @@ public class Ventas extends HttpServlet {
 			Cantidad2=Long.parseLong(request.getParameter("cantidadp2"));
 			Cantidad3=Long.parseLong(request.getParameter("cantidadp3"));
 			
-			//Precio1=Long.parseLong(request.getParameter("vlrt1"));
-			//Precio2=Long.parseLong(request.getParameter("vlrt2"));
-			//Precio3=Long.parseLong(request.getParameter("vlrt3"));
-			
-			//Costo1=Cantidad1*Precio1;
-			//Costo2=Cantidad2*Precio2;
-			//Costo3=Cantidad3*Precio3;
-			
-			//response.sendRedirect("Ventas.jsp?vlrt1="+Costo1);
-			//response.sendRedirect("Ventas.jsp?vlrt2="+Costo2);
-			//response.sendRedirect("Ventas.jsp?vlrt3="+Costo3);
-			
 			
 			codigoProducto1=Long.parseLong(request.getParameter("codP1"));
 			codigoProducto2=Long.parseLong(request.getParameter("codP2"));
@@ -96,14 +84,17 @@ public class Ventas extends HttpServlet {
 			Costo2=Cantidad2*Precio2;
 			Costo3=Cantidad3*Precio3;
 			
-			response.sendRedirect("Ventas.jsp?vlrt1="+Costo1);
-			response.sendRedirect("Ventas.jsp?vlrt2="+Costo2);
-			response.sendRedirect("Ventas.jsp?vlrt3="+Costo3);
+		
+			TotalVenta= Costo1+Costo2+Costo3;
+			TotalIva=(Costo1*Iva1)+(Costo2*Iva2)+(Costo3*Iva3);
+			TotalConIva=TotalVenta+TotalIva;
+			
+			response.sendRedirect("Ventas.jsp?vlrt1="+Costo1+"&&vlrt2="+Costo2
+					+"&&vlrt3="+Costo3+"&&totalventa="+ TotalVenta 
+					+"&&totaliva="+TotalIva+"&&totalconiva="+TotalConIva
+					+"&&cantidadp1="+Cantidad1+"&&cantidadp2="+Cantidad2+"&&cantidadp3="+Cantidad3);
+			
 		}
-		
-		
-		
-		
 		
 		
 		

@@ -16,7 +16,7 @@
 
 <%!
 String mensaje="";
-int canT1,canT2,canT3;
+float canT1,canT2,canT3;
 float vlrT1,vlrT2,vlrT3,totalVenta,totalIva,totalConIva,vlrU1,vlrU2,vlrU3;
 long cedulaCliente = 0, cedulaUsuario=0, codigoProducto1,codigoProducto2,codigoProducto3;
 String NombreProducto1, NombreProducto2, NombreProducto3;
@@ -162,12 +162,60 @@ if(request.getParameter("men")!=null)
 	mensaje=request.getParameter("men");
 	estado="enabled";
 }
+
+
+if(request.getParameter("totalventa")!=null)
+{
+	totalVenta=Float.parseFloat(request.getParameter("totalventa"));
+	mensaje="";
+	estado="enabled";
+}
+
+if(request.getParameter("totaliva")!=null)
+{
+	totalIva=Float.parseFloat(request.getParameter("totaliva"));
+	mensaje="";
+	estado="enabled";
+}
+
+
+if(request.getParameter("totalconiva")!=null)
+{
+	totalConIva=Float.parseFloat(request.getParameter("totalconiva"));
+	mensaje="";
+	estado="enabled";
+}
+
+
+if(request.getParameter("cantidadp1")!=null)
+{
+	canT1=Float.parseFloat(request.getParameter("cantidadp1"));
+	mensaje="";
+	estado="enabled";
+}
+
+if(request.getParameter("cantidadp2")!=null)
+{
+	canT2=Float.parseFloat(request.getParameter("cantidadp2"));
+	mensaje="";
+	estado="enabled";
+}
+
+if(request.getParameter("cantidadp3")!=null)
+{
+	canT3=Float.parseFloat(request.getParameter("cantidadp3"));
+	mensaje="";
+	estado="enabled";
+}
+
+
+
 %>
 
 <div class="padre">
 	<div class="hijo">
 	
-	<!-- <h2> <%=mensaje %> </h2>-->
+	<h2> <%=mensaje %> </h2>
 	
 	<!--  pueden usar esta lib para los estilos https://getbootstrap.com/docs/5.1/forms/overview/ copie el ejemplo del formulario
 	de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales/como-centrar-un-div-con-css/ -->
