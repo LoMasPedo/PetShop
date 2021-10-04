@@ -20,7 +20,7 @@ public class VentasDAO {
 	public boolean Confirmar(VentasDTO p) {
 		
 		boolean resul=false;
-		
+		int cventa;
 		try {
 			
 			String sql="insert into ventas(cedula_cliente, cedula_usuario, ivaventa,total_venta,valor_venta) values(?,?,?,?,?)";
@@ -35,11 +35,19 @@ public class VentasDAO {
 			System.out.println("Inserto venta correctamente");
 			
 			if(resul) {
+				sql= "select max(codigo_venta) from petshop_db.ventas";
+				ps=con.prepareStatement(sql);
+				res=ps.executeQuery();
+				cventa=0;
+				while(res.next()) {
+					cventa = res.getInt(1);
+				}
+				
 				sql="insert into detalle_ventas(cantidad_producto, codigo_producto, codigo_venta,valor_total,valor_venta,valoriva) values(?,?,?,?,?,?)";
 				ps = con.prepareStatement(sql);
 				ps.setFloat(1, p.getCantidadP1());
 				ps.setLong(2, p.getCodigoProducto1());
-				ps.setLong(3, p.getCodigoVenta());
+				ps.setLong(3, cventa);
 				ps.setDouble(4, p.getValorProducto1());
 				ps.setDouble(5, p.getValor_VentaDet1());
 				ps.setDouble(6, p.getIvaProducto1());
@@ -49,7 +57,7 @@ public class VentasDAO {
 				ps = con.prepareStatement(sql);
 				ps.setFloat(1, p.getCantidadP2());
 				ps.setLong(2, p.getCodigoProducto2());
-				ps.setLong(3, p.getCodigoVenta());
+				ps.setLong(3, cventa);
 				ps.setDouble(4, p.getValorProducto2());
 				ps.setDouble(5, p.getValor_VentaDet2());
 				ps.setDouble(6, p.getIvaProducto2());
@@ -59,7 +67,7 @@ public class VentasDAO {
 				ps = con.prepareStatement(sql);
 				ps.setFloat(1, p.getCantidadP3());
 				ps.setLong(2, p.getCodigoProducto3());
-				ps.setLong(3, p.getCodigoVenta());
+				ps.setLong(3, cventa);
 				ps.setDouble(4, p.getValorProducto3());
 				ps.setDouble(5, p.getValor_VentaDet3());
 				ps.setDouble(6, p.getIvaProducto3());

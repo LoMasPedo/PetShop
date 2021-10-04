@@ -12,13 +12,12 @@ public class VentasDTO {
 	
 	private String NombreProducto1,NombreProducto2,NombreProducto3;
 	
-	public VentasDTO(Long codigoVenta, Long codigoProducto1, Long codigoProducto2,
+	public VentasDTO(Long codigoProducto1, Long codigoProducto2,
 			Long codigoProducto3, double cedulaCliente, double cedulaUsuario, double ivaVenta, double totalVenta,
 			double valorVenta, double valorProducto1, double valorProducto2, double valorProducto3, double ivaProducto1,
 			double ivaProducto2, double ivaProducto3, double valor_VentaDet1, double valor_VentaDet2,
 			double valor_VentaDet3, float cantidadP1, float cantidadP2, float cantidadP3) {
 	
-		CodigoVenta = codigoVenta;
 		CodigoProducto1 = codigoProducto1;
 		CodigoProducto2 = codigoProducto2;
 		CodigoProducto3 = codigoProducto3;

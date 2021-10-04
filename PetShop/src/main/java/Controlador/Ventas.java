@@ -46,9 +46,7 @@ public class Ventas extends HttpServlet {
 	Connection con= cnn.Conectar();
 	PreparedStatement ps= null;
 	ResultSet res= null;
-	public double TotalVenta,TotalIva,TotalConIva,Iva1,Iva2,Iva3,Precio1,Precio2,Precio3,
-	Costo1,Costo2,Costo3;
-	public float Cantidad1,Cantidad2,Cantidad3;
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -58,14 +56,16 @@ public class Ventas extends HttpServlet {
 		
 		//BOTON DE CALCULAR 
 		if(request.getParameter("calcular")!=null) {
+			
+			double TotalVenta,TotalIva,TotalConIva,Iva1,Iva2,Iva3,Precio1,Precio2,Precio3,
+			Costo1,Costo2,Costo3;
+			float Cantidad1,Cantidad2,Cantidad3;
 			Long codigoProducto1,codigoProducto2,codigoProducto3;
 			
-		
 			Cantidad1=Long.parseLong(request.getParameter("cantidadp1"));
 			Cantidad2=Long.parseLong(request.getParameter("cantidadp2"));
 			Cantidad3=Long.parseLong(request.getParameter("cantidadp3"));
-			
-			
+						
 			codigoProducto1=Long.parseLong(request.getParameter("codP1"));
 			codigoProducto2=Long.parseLong(request.getParameter("codP2"));
 			codigoProducto3=Long.parseLong(request.getParameter("codP3"));
@@ -86,8 +86,7 @@ public class Ventas extends HttpServlet {
 			Costo1=Cantidad1*Precio1;
 			Costo2=Cantidad2*Precio2;
 			Costo3=Cantidad3*Precio3;
-			
-		
+					
 			TotalVenta= Costo1+Costo2+Costo3;
 			TotalIva=(Costo1*Iva1)+(Costo2*Iva2)+(Costo3*Iva3);
 			TotalConIva=TotalVenta+TotalIva;
@@ -247,53 +246,65 @@ public class Ventas extends HttpServlet {
 		
 		
 		
-		
-		
-		
 		//BOTON DE CONFIRMAR, ENVIAR TODO AL CONTROLADOR VentasDTO, PARA POSTERIORMENTE 
 		//SUBIR TODO A LA BASE DE DATOS POR MEDIO DEL DAO
 		if(request.getParameter("confirmar")!=null) {
-			try {
-				//Trae el codigo de ventas, directamente de la base de datos, de la tabla ventas
-				//Se usara el codigo para registralo en la tabla detalle de venta
-				String sql= "SELECT * FROM petshop_db.ventas order by codigo_venta desc limit 1;";
-				ps=con.prepareStatement(sql);
-				res=ps.executeQuery();
-				
-				long cventa = res.getLong(1);
-				
+
+				try {
+				double cedulaCliente=Long.parseLong(request.getParameter("cedula_cliente"));
+				double cedulaUsuario=Long.parseLong(request.getParameter("cedula_usuario"));
 				Long codigoProducto1=Long.parseLong(request.getParameter("codP1"));
 				Long codigoProducto2=Long.parseLong(request.getParameter("codP2"));
 				Long codigoProducto3=Long.parseLong(request.getParameter("codP3"));
-				double cedulaCliente=Long.parseLong(request.getParameter("cedula_cliente"));
-				double cedulaUsuario=Long.parseLong(request.getParameter("cedula_usuario"));
+				float Cantidad1=Float.parseFloat(request.getParameter("cantidadp1"));
+				float Cantidad2=Float.parseFloat(request.getParameter("cantidadp2"));
+				float Cantidad3=Float.parseFloat(request.getParameter("cantidadp3"));
 				
 				ProductoDAO conexionProducto=new ProductoDAO();
 				ProductoDTO Pro1DTO=conexionProducto.Consultar_Producto(codigoProducto1);
-				Iva1= Pro1DTO.getIvaCompra();
-				Precio1=Pro1DTO.getPrecioVenta();
+				double Iva1= Pro1DTO.getIvaCompra();
+				double Precio1=Pro1DTO.getPrecioVenta();
 				
 				ProductoDTO Pro2DTO=conexionProducto.Consultar_Producto(codigoProducto2);
-				Iva2= Pro2DTO.getIvaCompra();
-				Precio2=Pro2DTO.getPrecioVenta();
+				double Iva2= Pro2DTO.getIvaCompra();
+				double Precio2=Pro2DTO.getPrecioVenta();
 				
 				ProductoDTO Pro3DTO=conexionProducto.Consultar_Producto(codigoProducto3);
-				Iva3= Pro3DTO.getIvaCompra();
-				Precio3=Pro3DTO.getPrecioVenta();
+				double Iva3= Pro3DTO.getIvaCompra();
+				double Precio3=Pro3DTO.getPrecioVenta();
 				
-				VentasDTO ven = null;
-				ven = new VentasDTO(cventa,codigoProducto1,codigoProducto2,codigoProducto3,cedulaCliente,cedulaUsuario,TotalIva,TotalVenta,TotalConIva,
-				Precio1,Precio2,Precio3,Iva1,Iva2,Iva3,Costo1,Costo2,Costo3,Cantidad1,Cantidad2,Cantidad3);
+				double Costo1=Cantidad1*Precio1;
+				double Costo2=Cantidad2*Precio2;
+				double Costo3=Cantidad3*Precio3;
+						
+				double TotalVenta= Costo1+Costo2+Costo3;
+				double TotalIva=(Costo1*Iva1)+(Costo2*Iva2)+(Costo3*Iva3);
+				double TotalConIva=TotalVenta+TotalIva;
 				
-				VentasDAO vdao = new VentasDAO();
-				vdao.Confirmar(ven);
 				
-			}catch (Exception e) {
-				// TODO: handle exception
-				System.out.print("la cagaste");
-			}
+				VentasDTO ven = new VentasDTO(codigoProducto1,codigoProducto2,codigoProducto3,
+						cedulaCliente,cedulaUsuario,TotalIva,TotalVenta,TotalConIva,
+						Precio1,Precio2,Precio3,Iva1,Iva2,Iva3,Costo1,Costo2,Costo3,Cantidad1,Cantidad2,Cantidad3);
+				
+				VentasDAO vDAO = new VentasDAO();
+				vDAO.Confirmar(ven);
+				
+				String sql= "select max(codigo_venta) from petshop_db.ventas";
+				ps=con.prepareStatement(sql);
+				res=ps.executeQuery();
+				int cventa=0;
+				while(res.next()) {
+					cventa = res.getInt(1);
+				}
+				
+				
+				response.sendRedirect("Ventas.jsp?men=Factura registrada existamente"+"&&consec="+cventa);
+		}catch(Exception e) {
+				response.sendRedirect("Ventas.jsp?men=Factura no registrada");
 		}
+			
 		
 	}
-
+	}
 }
+
