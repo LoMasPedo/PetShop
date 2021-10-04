@@ -32,14 +32,16 @@ header {
 	display: table;
 	background-color: #2ba3ac;
 	margin-bottom: 40px;
+	
+	
 }
 
 #logomenu {
 	display: block;
 	margin-left: auto;
-  margin-right: auto;
-  border-radius: 210px;
-	
+ 	margin-right: auto;
+ 	border-radius: 210px;
+	 
 }
 
 nav {
@@ -67,7 +69,7 @@ nav ul li:last-child {
 nav ul li a {
 	color: #ecf0f1;
 	font-size: 20px;
-	padding: 25px 20px;
+	padding: 20px 20px; /*sele ajusto el tamaño a la barra rosada del menu*/
 	border-radius: 100px;
 	display: inline-block;
 	transition: all 0.5s ease 0s;

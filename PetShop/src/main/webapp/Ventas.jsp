@@ -368,8 +368,9 @@ if(request.getParameter("cantidadp3")!=null)
 			</th>
 		</tr>
 		<tr>
+			<th></th>
 			<th> Total Con Iva</th>
-			<th> 
+			<th>
 				<input type="number" name="totalconiva" value="<%=totalConIva%>" required> 
 			</th>
 		</tr>
