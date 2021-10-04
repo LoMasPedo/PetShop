@@ -376,7 +376,6 @@ if(request.getParameter("cantidadp3")!=null)
 		
 			<th><input class="botonformulario" type="submit" name="calcular" value="Calcular" > </th>
 			<th><input class="botonformulario" type="submit" name="confirmar" value="Confirmar" > </th>
-		
 	</table>
 	</div>
 	

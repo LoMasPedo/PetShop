@@ -32,10 +32,12 @@ public class VentasDAO {
 			ps.setDouble(5, p.getValorVenta());
 			resul=ps.executeUpdate()>0; 
 			
+			System.out.println("Inserto venta correctamente");
+			
 			if(resul) {
 				sql="insert into detalle_ventas(cantidad_producto, codigo_producto, codigo_venta,valor_total,valor_venta,valoriva) values(?,?,?,?,?,?)";
 				ps = con.prepareStatement(sql);
-				ps.setInt(1, p.getCantidadP1());
+				ps.setFloat(1, p.getCantidadP1());
 				ps.setLong(2, p.getCodigoProducto1());
 				ps.setLong(3, p.getCodigoVenta());
 				ps.setDouble(4, p.getValorProducto1());
@@ -45,7 +47,7 @@ public class VentasDAO {
 				
 				sql="insert into detalle_ventas(cantidad_producto, codigo_producto, codigo_venta,valor_total,valor_venta,valoriva) values(?,?,?,?,?,?)";
 				ps = con.prepareStatement(sql);
-				ps.setInt(1, p.getCantidadP2());
+				ps.setFloat(1, p.getCantidadP2());
 				ps.setLong(2, p.getCodigoProducto2());
 				ps.setLong(3, p.getCodigoVenta());
 				ps.setDouble(4, p.getValorProducto2());
@@ -55,22 +57,18 @@ public class VentasDAO {
 				
 				sql="insert into detalle_ventas(cantidad_producto, codigo_producto, codigo_venta,valor_total,valor_venta,valoriva) values(?,?,?,?,?,?)";
 				ps = con.prepareStatement(sql);
-				ps.setInt(1, p.getCantidadP3());
+				ps.setFloat(1, p.getCantidadP3());
 				ps.setLong(2, p.getCodigoProducto3());
 				ps.setLong(3, p.getCodigoVenta());
 				ps.setDouble(4, p.getValorProducto3());
 				ps.setDouble(5, p.getValor_VentaDet3());
 				ps.setDouble(6, p.getIvaProducto3());
 				resul=ps.executeUpdate()>0;
+				System.out.println("Inserto detalle de venta correctamente");
 			}
-			
 		}catch(SQLException ex) {
 			JOptionPane.showMessageDialog(null, "Error al confirmar: "+ex);
-			
 		}
-		
-		
-		
 		return resul;
 	}
 		
