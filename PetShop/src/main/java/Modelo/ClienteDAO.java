@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Controlador.Conexion;
 
@@ -98,5 +99,30 @@ public class ClienteDAO {
 		}
 		return resul;
 	}	
+	public ArrayList<ClienteDTO> Listar_Cliente() 
+	{
+			ClienteDTO clien= null;
+			ArrayList<ClienteDTO> lista= new ArrayList<>();
+		try 
+		{
+			String sql="select * from clientes";	
+			ps=con.prepareStatement(sql);
+			res=ps.executeQuery();
+			
+			while(res.next()) 
+			{
+				clien = new ClienteDTO(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
+				lista.add(clien); 
+			}
+		}
+		catch(SQLException e) 
+		{
+			//JOptionPane.showMessageDialog(null,"Error al consultar" +e);
+			System.out.println("error al consultar"+e);
+		}
+	
+		return lista;
+	}
+
 
 }

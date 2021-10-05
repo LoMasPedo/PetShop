@@ -158,4 +158,51 @@ display:inline-block;
 	min-width: 180px;
 }
 
+.listaClientes{
+    display: inline-block;
+    font-weight: 400;
+    font-family:sans-serif;
+    text-align: center;
+  
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+  
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: #fff;
+    background-color: #2ba3ac;
+    margin:auto;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.ListaClientes {
+    background-color: #eb737b; 
+    color: white;
+}
+
+.tablaReportes {
+   width: 70%;
+   border: 1px solid #000;
+   border-radius: .25rem;
+   margin: auto;
+}
+.th1, .td1 {
+   width: 25%;
+   text-align: center;
+   vertical-align: middle;
+   border: 1px solid #000;
+   border-collapse: collapse;
+   padding: 0.3em;
+   caption-side: bottom;
+   background: #ffffff;
+}
+caption {
+   padding: 0.3em;
+   color: #fff;
+   background: #000; 
+}
+.th1 {
+   background:#ccebec;
+}
 
