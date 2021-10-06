@@ -15,18 +15,20 @@ import com.google.gson.Gson;
 
 import Modelo.ClienteDAO;
 import Modelo.ClienteDTO;
+import Modelo.ReporteVentasDTO;
+import Modelo.VentasDAO;
 
 /**
  * Servlet implementation class ReportesClientes
  */
-@WebServlet("/ReportesClientes")
-public class ReportesClientes extends HttpServlet {
+@WebServlet("/Reportes")
+public class Reportes extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ReportesClientes() {
+	public Reportes() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -34,25 +36,43 @@ public class ReportesClientes extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String op = request.getParameter("opcion");
-		JOptionPane.showMessageDialog(null, op);
-		//System.out.println("error");
-		// String men=request.getParameter("mensaje");
-		// JOptionPane.showMessageDialog(null, men);
+		System.out.println("opcion de reporte: " + op);
 
 		PrintWriter salida = response.getWriter();
 		Gson datos = new Gson();
 
 		if (op.equals("Clientes")) {
 			try {
-				JOptionPane.showMessageDialog(null, "mensaje");
+				//JOptionPane.showMessageDialog(null, "mensaje");
 				ClienteDAO clienDao = new ClienteDAO();
 				ArrayList<ClienteDTO> lista = new ArrayList<>();
 				lista = clienDao.Listar_Cliente();
 				salida.println(datos.toJson(lista));
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Error al cargar Archivo" + e);
+				JOptionPane.showMessageDialog(null, "Error al generar el reporte de clientes" + e);
 			}
-		}
+		}else
+			
+			if (op.equals("Ventas")) {
+				try {
+					VentasDAO ventasDao = new VentasDAO();
+					ArrayList<ReporteVentasDTO> lista = new ArrayList<>();
+					lista = ventasDao.ListaVentas();
+					salida.println(datos.toJson(lista));
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "Error al generar el reporte de Ventas" + e);
+				}
+			}
+			else
+				
+				if (op.equals("Usuarios")) {
+					try {
+						//pendiente de hacer el reporte de usuarios
+						salida.println(datos.toJson("{'pendiente':'pendiente'}"));
+					} catch (Exception e) {
+						JOptionPane.showMessageDialog(null, "Error al generar el reporte de Usuarios" + e);
+					}
+				}
 	}
 
 }

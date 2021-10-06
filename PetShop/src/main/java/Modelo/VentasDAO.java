@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 import Controlador.Conexion;
@@ -79,5 +81,32 @@ public class VentasDAO {
 		}
 		return resul;
 	}
+	
+	
+	
+	public ArrayList<ReporteVentasDTO> ListaVentas(){
+		ReporteVentasDTO venta= null;
+		ArrayList<ReporteVentasDTO> lista= new ArrayList<>();
+			try 
+			{
+				String sql="select v.cedula_cliente,v.valor_venta,c.nombre_cliente from Ventas v INNER JOIN clientes c ON v.cedula_cliente=c.cedula_cliente";	
+				ps=con.prepareStatement(sql);
+				res=ps.executeQuery();
+				
+				while(res.next()) 
+				{
+					venta = new ReporteVentasDTO(res.getDouble(1),res.getDouble(2), res.getString(3));
+					lista.add(venta); 
+					
+					
+				}
+			}
+			catch(SQLException e) 
+			{
+				//JOptionPane.showMessageDialog(null,"Error al consultar" +e);
+				System.out.println("error al consultar"+e);
+			}
 		
+			return lista;
+	}	
 }

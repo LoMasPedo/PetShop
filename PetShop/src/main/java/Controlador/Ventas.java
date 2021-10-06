@@ -288,7 +288,7 @@ public class Ventas extends HttpServlet {
 				
 				VentasDAO vDAO = new VentasDAO();
 				vDAO.Confirmar(ven);
-				
+				//esto deberia llamarse en el DAO, no en este archivo
 				String sql= "select max(codigo_venta) from petshop_db.ventas";
 				ps=con.prepareStatement(sql);
 				res=ps.executeQuery();

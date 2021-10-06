@@ -12,6 +12,10 @@ public class VentasDTO {
 	
 	private String NombreProducto1,NombreProducto2,NombreProducto3;
 	
+	public VentasDTO() {
+		super();
+	}
+	
 	public VentasDTO(Long codigoProducto1, Long codigoProducto2,
 			Long codigoProducto3, double cedulaCliente, double cedulaUsuario, double ivaVenta, double totalVenta,
 			double valorVenta, double valorProducto1, double valorProducto2, double valorProducto3, double ivaProducto1,
