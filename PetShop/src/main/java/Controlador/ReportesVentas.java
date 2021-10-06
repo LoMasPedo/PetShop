@@ -21,14 +21,14 @@ import Modelo.VentasDAO;
 /**
  * Servlet implementation class ReportesClientes
  */
-@WebServlet("/Reportes")
-public class Reportes extends HttpServlet {
+@WebServlet("/ReportesVentas")
+public class ReportesVentas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Reportes() {
+	public ReportesVentas() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -41,17 +41,6 @@ public class Reportes extends HttpServlet {
 		PrintWriter salida = response.getWriter();
 		Gson datos = new Gson();
 
-		if (op.equals("Clientes")) {
-			try {
-				//JOptionPane.showMessageDialog(null, "mensaje");
-				ClienteDAO clienDao = new ClienteDAO();
-				ArrayList<ClienteDTO> lista = new ArrayList<>();
-				lista = clienDao.Listar_Cliente();
-				salida.println(datos.toJson(lista));
-			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Error al generar el reporte de clientes" + e);
-			}
-		}else
 			
 			if (op.equals("Ventas")) {
 				try {
@@ -63,16 +52,6 @@ public class Reportes extends HttpServlet {
 					JOptionPane.showMessageDialog(null, "Error al generar el reporte de Ventas" + e);
 				}
 			}
-			else
-				
-				if (op.equals("Usuarios")) {
-					try {
-						//pendiente de hacer el reporte de usuarios
-						salida.println(datos.toJson("{'pendiente':'pendiente'}"));
-					} catch (Exception e) {
-						JOptionPane.showMessageDialog(null, "Error al generar el reporte de Usuarios" + e);
-					}
-				}
 	}
 
 }

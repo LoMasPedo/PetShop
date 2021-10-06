@@ -8,7 +8,6 @@
 <title>D Pet Shop</title>
 <link rel="stylesheet" href="css/Opciones.css">
 <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="js/reportes.js"></script>
 </head>
 <body>
 
@@ -16,9 +15,8 @@
 
 <h1>Modulo Reportes</h1>
 <div class=contenedorBotonesReporte>
-<button class="botonReporte listaClientes">Listado de Clientes</button>
-<button class="botonReporte listaVentas">Listado de Ventas</button>
-<button class="botonReporte listaUsuarios">Listado de Usuarios</button>
+<a class="botonReporte listaClientes" href="ReportesClientes.jsp">Listado de Clientes</a>
+<a class="botonReporte listaVentas" href="ReportesVentas.jsp">Listado de Ventas</a>
 </div>
 
 
