@@ -52,7 +52,7 @@ public class ReportesClientes extends HttpServlet {
 				JOptionPane.showMessageDialog(null, "Error al generar el reporte de clientes" + e);
 			}
 		}
-			/*else
+			else
 				
 				if (op.equals("Usuarios")) {
 					try {
@@ -62,7 +62,7 @@ public class ReportesClientes extends HttpServlet {
 						JOptionPane.showMessageDialog(null, "Error al generar el reporte de Usuarios" + e);
 					}
 				}
-				*/
+				
 	}
 
 }

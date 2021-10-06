@@ -15,6 +15,7 @@
 
 <h1>Modulo Reportes</h1>
 <div class=contenedorBotonesReporte>
+<a class="botonReporte listaUsuarios" href="ReportesUsuarios.jsp">Listado de Usuarios</a>
 <a class="botonReporte listaClientes" href="ReportesClientes.jsp">Listado de Clientes</a>
 <a class="botonReporte listaVentas" href="ReportesVentas.jsp">Listado de Ventas</a>
 </div>

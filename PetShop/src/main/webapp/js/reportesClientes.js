@@ -32,8 +32,11 @@ $(document).ready(function(){
 		});	
 	}
 
+listarClientes();
+/*
 $('.listaClientes').on('click',function(){
 	listarClientes()
 });
+*/
 
 })

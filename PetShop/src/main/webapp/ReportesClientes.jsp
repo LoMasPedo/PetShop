@@ -12,7 +12,7 @@
 <body>
 <jsp:include page="Header.jsp" />
 <h1>Listado de Clientes</h1>
-<div><button class="listaClientes">Listado de Clientes</button></div>
+<div style="display:none;"><button class="listaClientes">Listado de Clientes</button></div>
 
 <table id="tabla" class="tablaReportes"></table>
 

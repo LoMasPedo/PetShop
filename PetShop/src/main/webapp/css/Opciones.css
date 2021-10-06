@@ -193,6 +193,7 @@ display:inline-block;
    /*border: 1px solid #000;*/
    border-radius: .25rem;
    margin: auto;
+   
 }
 .th1, .td1 {
    width: 25%;
@@ -203,6 +204,7 @@ display:inline-block;
    padding: 0.3em;
    caption-side: bottom;
    background: #ffffff;
+   
 }
 caption {
    padding: 0.3em;
