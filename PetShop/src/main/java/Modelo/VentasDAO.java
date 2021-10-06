@@ -89,7 +89,7 @@ public class VentasDAO {
 		ArrayList<ReporteVentasDTO> lista= new ArrayList<>();
 			try 
 			{
-				String sql="select v.cedula_cliente,v.valor_venta,c.nombre_cliente from Ventas v INNER JOIN clientes c ON v.cedula_cliente=c.cedula_cliente";	
+				String sql="select v.cedula_cliente,sum(v.valor_venta),c.nombre_cliente from Ventas v INNER JOIN clientes c ON v.cedula_cliente=c.cedula_cliente group by v.cedula_cliente";	
 				ps=con.prepareStatement(sql);
 				res=ps.executeQuery();
 				
