@@ -15,41 +15,40 @@ import com.google.gson.Gson;
 
 import Modelo.ClienteDAO;
 import Modelo.ClienteDTO;
-import Modelo.ReporteVentasDTO;
-import Modelo.VentasDAO;
+import Modelo.UsuarioDAO;
+import Modelo.UsuarioDTO;
 
 /**
- * Servlet implementation class ReportesClientes
+ * Servlet implementation class ReportesUsuarios
  */
-@WebServlet("/ReportesClientes")
-public class ReportesClientes extends HttpServlet {
+@WebServlet("/ReportesUsuarios")
+public class ReportesUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ReportesUsuarios() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public ReportesClientes() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String op = request.getParameter("opcion");
 		System.out.println("opcion de reporte: " + op);
 
 		PrintWriter salida = response.getWriter();
 		Gson datos = new Gson();
 
-		if (op.equals("Clientes")) {
+		if (op.equals("Usuarios")) {
 			try {
 				//JOptionPane.showMessageDialog(null, "mensaje");
-				ClienteDAO clienDao = new ClienteDAO();
-				ArrayList<ClienteDTO> lista = new ArrayList<>();
-				lista = clienDao.Listar_Cliente();
+				UsuarioDAO usuaDao = new UsuarioDAO();
+				ArrayList<UsuarioDTO> lista = new ArrayList<>();
+				lista = usuaDao.Listar_Usuario();
 				salida.println(datos.toJson(lista));
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Error al generar el reporte de clientes" + e);
+				JOptionPane.showMessageDialog(null, "Error al generar el reporte de usuarios" + e);
 			}
 		}
 	}
