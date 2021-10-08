@@ -307,4 +307,3 @@ public class Ventas extends HttpServlet {
 	}
 	}
 }
-

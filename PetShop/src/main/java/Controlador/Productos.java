@@ -43,8 +43,8 @@ public class Productos extends HttpServlet
 			String nombre=request.getParameter("nombreArch");
 			//JOptionPane.showMessageDialog(null, archivo.getSubmittedFileName());
 			//String Url="C:/Users/franc/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
-			//String Url="C:/Users/andre/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
-			String Url="C:/Users/yenny/OneDrive/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc";
+			String Url="C:/Users/andre/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
+			//String Url="C:/Users/yenny/OneDrive/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc";
 			//JOptionPane.showMessageDialog(null, Url);
 			
 			try 
@@ -67,7 +67,7 @@ public class Productos extends HttpServlet
 
 				if(prodDao.Cargar_Producto(Url+nombre+".csv")) 
 				{
-					System.out.println("Archivo cargado Exitosamente");
+					//System.out.println("Archivo cargado Exitosamente");
 					response.sendRedirect("Productos.jsp?men=Archivo cargado Exitosamente");
 					JOptionPane.showMessageDialog(null, "Archivo Cargado Correctamente");
 				}

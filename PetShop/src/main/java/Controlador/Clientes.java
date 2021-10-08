@@ -49,13 +49,13 @@ public class Clientes extends HttpServlet {
 			
 			if(clienDao.Insertar_Cliente(clienDto)) 
 			{
-				//JOptionPane.showMessageDialog(null, "Cliente Creado Exitosamente.");
+				JOptionPane.showMessageDialog(null, "Cliente Creado Exitosamente.");
 				System.out.println("se registro exitosamente");
 				response.sendRedirect("Clientes.jsp?men=Cliente Creado Exitosamente.");
 			}
 			else 
 			{
-				//JOptionPane.showMessageDialog(null, "El Cliente no se cre�.");
+				JOptionPane.showMessageDialog(null, "El Cliente no se creo.");
 				System.out.println("el cliente no se registro");
 				response.sendRedirect("Clientes.jsp?men=El Cliente no se creo.");
 			}
@@ -96,7 +96,7 @@ public class Clientes extends HttpServlet {
 			nombreCliente = request.getParameter("nombre_cliente");
 			telefonoCliente = request.getParameter("telefono_cliente");
 			
-			int op = JOptionPane.showConfirmDialog(null, "Desea Actualizar el Cliente: " + cedula_cliente,
+			int op = JOptionPane.showConfirmDialog(null, "Desea actualizar el cliente: " + cedula_cliente,
 					"YES_NO_OPTION", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 			if (op == 0) {
 			
@@ -104,14 +104,14 @@ public class Clientes extends HttpServlet {
 			ClienteDTO clienDto_Act = new ClienteDTO(cedula_cliente,direccionCliente,emailCliente,nombreCliente,telefonoCliente);
 			if(clienDao.Actualizar_Cliente(clienDto_Act)) 
 			{
-				//JOptionPane.showMessageDialog(null, "El Usuario Actualizo Exitosamente.");
+				JOptionPane.showMessageDialog(null, "El Cliente se Actualizo Exitosamente.");
 				System.out.println("Se actualizo el cliente");
 				response.sendRedirect("Clientes.jsp?men=Cliente Actualizado Exitosamente.");
 			}
 			   }else 	{
 				   
 				   JOptionPane.showMessageDialog(null, "El cliente no se Actualizo.");
-					//System.out.println("el cliente no se actualizo");
+					System.out.println("el cliente no se actualizo");
 					response.sendRedirect("Clientes.jsp?men=El cliente no se Actualizo.");
 				 }
 			}
@@ -122,14 +122,20 @@ public class Clientes extends HttpServlet {
 				long cedula_cliente;
 				cedula_cliente =Long.parseLong( request.getParameter("cedula_cliente"));
 
-				int op = JOptionPane.showConfirmDialog(null, "Desea Eliminar el usuario: " + cedula_cliente,
+				int op = JOptionPane.showConfirmDialog(null, "Desea eliminar el cliente: " + cedula_cliente,
 						"YES_NO_OPTION", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 				if (op == 0) {
 				
 					if(clienDao.Eliminar_Cliente(cedula_cliente)) 
 					{
 						//System.out.println("Se eliminio el cliente");
+						JOptionPane.showMessageDialog(null, "Cliente eliminado exitosamente .");
 						response.sendRedirect("Clientes.jsp?men=Cliente Eliminado");
+					}
+					else
+					{
+						JOptionPane.showMessageDialog(null, "El cliente no se puede eliminar, verifique si ya tiene ventas.");
+						response.sendRedirect("Clientes.jsp?men=El cliente no se elimino.");
 					}
 				}
 				else 

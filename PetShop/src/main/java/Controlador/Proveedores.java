@@ -46,12 +46,12 @@ public class Proveedores extends HttpServlet {
 			ProveedoresDTO proveedoresDTO = new ProveedoresDTO (Nit_Proveedor, Ciudad_Proveedor, Direccion_Proveedor, Nombre_Proveedor, Telefono_Proveedor);
 			
 			if(proveedoresDAO.Insertar_Provedores(proveedoresDTO)) {
-				//JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente");
+				JOptionPane.showMessageDialog(null, "Proveedor registrado exitosamente");
 				System.out.println("se registro exitosamente");
 				response.sendRedirect("Proveedores.jsp?men=Proveedor Registrado Exitosamente");
 				
 			}else {
-				//JOptionPane.showMessageDialog(null, "El Usuario no se registro");
+				JOptionPane.showMessageDialog(null, "El proveedor no se registro");
 				System.out.println("no se registro");
 				response.sendRedirect("Proveedores.jsp?men=Proveedor Registrado Exitosamente");
 			}
@@ -89,13 +89,13 @@ public class Proveedores extends HttpServlet {
 			Nombre_Proveedor = request.getParameter("Nombre_Proveedor");
 			Telefono_Proveedor = request.getParameter("Telefono_Proveedor");
 			
-			int op = JOptionPane.showConfirmDialog(null, "Desea Actualizar el usuario: " + Nit_Proveedor,
+			int op = JOptionPane.showConfirmDialog(null, "Desea Actualizar el proveedor: " + Nit_Proveedor,
 					"YES_NO_OPTION", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 			if (op == 0) {			
 			
 			ProveedoresDTO libDto_Act = new ProveedoresDTO (Nit_Proveedor, Ciudad_Proveedor, Direccion_Proveedor, Nombre_Proveedor, Telefono_Proveedor);
 			if(proveedoresDAO.Actualizar_Proveedores(libDto_Act)) {
-				//JOptionPane.showMessageDialog(null, "El Proveedor se Actualizo Exitosamente.");
+				JOptionPane.showMessageDialog(null, "El Proveedor se Actualizo Exitosamente.");
 				//System.out.println("se actualizo el proveedor");
 				response.sendRedirect("Proveedores.jsp?men=Proveedor Actualizado Exitosamente.");
 					}
@@ -117,7 +117,12 @@ public class Proveedores extends HttpServlet {
 				//System.out.println("se eliminio el proveedor");
 				response.sendRedirect("Proveedores.jsp?men=Proveedor Eliminado");
 			}
-				}else {
+				else
+				{
+					JOptionPane.showMessageDialog(null, "El proveedor no se puede eliminar, verifique si ya tiene productos.");
+					response.sendRedirect("Proveedores.jsp?men=El proveedor no se elimino.");
+				}
+			}else {
 					//System.out.println("Proveedor no se elimino");
 					response.sendRedirect("Proveedores.jsp?men=El proveedor no se elimino.");
 				
