@@ -1,0 +1,52 @@
+@charset "ISO-8859-1";
+
+h1{
+  text-align:center;
+  /*font-family:monospace;*/
+  font-family:'Candara', sans-serif;
+  text-transform: uppercase;
+  font-weight: 70px;
+  font-size: 30px;
+  /*color: #8b61c3;*/
+  color:#eb737b; 
+  text-shadow: -1px -1px 1px gray;
+  
+
+  
+}
+
+
+#tabla {
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+#tabla td, #tabla th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  
+}
+
+#tabla tr:nth-child(even){background-color: #f2f2f2;}
+
+#tabla tr:hover {
+	background-color: #ddd;
+	}
+
+#tabla th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2ba3ac;
+  border-bottom: solid 5px #188D95;
+  color: white;
+}
+
+thead{
+	
+	color: white;
+}
