@@ -7,12 +7,10 @@ h1{
   text-transform: uppercase;
   font-weight: 70px;
   font-size: 30px;
+  text-align: center;
   /*color: #8b61c3;*/
   color:#eb737b; 
-  text-shadow: -1px -1px 1px gray;
-  
-
-  
+  text-shadow: -1px -1px 1px gray; 
 }
 
 

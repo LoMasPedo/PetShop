@@ -7,7 +7,7 @@ background-image: url("Fondo.jpg");
 }
 .box{
 z-index: 2;
-  width: 500px;
+  width: 370px;
   padding: 40px;
   position: absolute;
   border-radius: 100px;
@@ -15,23 +15,22 @@ z-index: 2;
   left: 50%;
   transform: translate(-50%,-50%);
   background: #2ba3ac;
+  border: 10px solid #eb737b; 
   text-align: center;
 }
 
 #logo {
-
 	display: block;
-	border: 20px solid #2ba3ac;
 	margin-top: 3%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 210px;
+  	margin-left: auto;
+  	margin-right: auto;
+  	
 }  
 
 .box input[type = "text"],.box input[type = "password"]{
   font-family: sans-serif;
   font-weight: bold;
-	font-size :large;
+  font-size :large;
   border:0;
   background: none;
   display: block;
@@ -44,11 +43,14 @@ z-index: 2;
   color:white;
   border-radius: 24px;
   transition: 0.25s;
+  background-color:#69c4c6;
   
 }
 .box input[type = "text"]:focus,.box input[type = "password"]:focus{
   width: 280px;
   border-color:#eb737b  ;
+  background-color:#69c4c6;
+ 
 }
 .box input[type = "submit"]{
 	font-family: sans-serif;
@@ -66,6 +68,7 @@ z-index: 2;
   border-radius: 24px;
   transition: 0.25s;
   cursor: pointer;
+  background-color:#69c4c6;
 }
 .box input[type = "submit"]:hover{
   background:#eb737b;

@@ -222,7 +222,7 @@ footer {
 	}
 }
 </style>	
-<img id="logomenu" src="img/logo.jpg" width="450px" />
+<img id="logomenu" src="img/logo.png" width="300px" />
 <header>
 	<section>
 	<!--  -->

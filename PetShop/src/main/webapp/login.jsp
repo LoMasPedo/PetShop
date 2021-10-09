@@ -9,7 +9,7 @@
 	</head>
 	
 	<body>
-		<img id = "logo" src="img/logo.jpg" width="800px" />
+		<img id = "logo" src="img/logo.png" width="800px" />
 		<form class="box" action="Login" method = "post">
             <input type="text" name="user" placeholder="Ingrese Su Usuario" />
             <input type="password" name="pass" placeholder="Ingrese Su Clave"/>
@@ -17,4 +17,4 @@
             <input type="submit" name="cancelar" value="Cancelar" />
         </form>
 	</body>
-</html>
+</html> 
