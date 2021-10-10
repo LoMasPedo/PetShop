@@ -68,7 +68,7 @@ public class Productos extends HttpServlet
 				if(prodDao.Cargar_Producto(Url+nombre+".csv")) 
 				{
 					//System.out.println("Archivo cargado Exitosamente");
-					response.sendRedirect("Productos.jsp?men=Archivo cargado Exitosamente");
+					response.sendRedirect("Productos.jsp?men2=Archivo cargado Exitosamente");
 					JOptionPane.showMessageDialog(null, "Archivo Cargado Correctamente");
 				}
 				else 

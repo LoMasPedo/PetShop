@@ -17,7 +17,7 @@
 <h1>Modulo Productos</h1>
 
 <%!
-String mensaje="";
+String mensaje="", mensaje2="";
 long CodigoProducto=0;
 double IvaCompra= 0;
 double PrecioCompra= 0;
@@ -42,11 +42,22 @@ if(request.getParameter("men")!=null)
 	NombreProducto = "";
 	PrecioCompra = 0;	
 	mensaje=request.getParameter("men");
+	mensaje2="";
+}
+
+if(request.getParameter("men2")!=null)
+{
+	CodigoProducto= 0;
+	IvaCompra = 0;
+	NombreProducto = "";
+	PrecioCompra = 0;	
+	mensaje2=request.getParameter("men2");
+	mensaje ="";
 }
 %>
 <div class="padre">
 <div class="hijo">
-<h2><%=mensaje %></h2>
+<h2><%=mensaje2 %></h2>
 
 
 <script type="text/javascript">

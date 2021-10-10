@@ -152,16 +152,34 @@ if(request.getParameter("vlru3")!=null)
 if(request.getParameter("men")!=null)
 {
 	cedulaCliente=0;
-	mensaje=request.getParameter("men");
-	estado="enabled";
-}
-
-if(request.getParameter("men")!=null)
-{
 	cedulaUsuario=0;
 	mensaje=request.getParameter("men");
 	estado="enabled";
+	canT1 =0;
+	canT2 = 0;
+	canT3 = 0;
+	vlrT1 =0;
+	vlrT2= 0;
+	vlrT3 = 0;
+	totalVenta=0;
+	totalIva =0;
+	totalConIva =0;
+	vlrU1=0;
+	vlrU2=0;
+	vlrU3=0;
+	cedulaCliente = 0;
+	cedulaUsuario=0;
+	codigoProducto1 = 0;
+	codigoProducto2=0; 
+	codigoProducto3=0;
+	 NombreProducto1=null;
+	 NombreProducto2=null;
+	 NombreProducto3=null;
+	nombreCliente=null;
+	nombreUsuario=null;
+
 }
+
 
 
 if(request.getParameter("totalventa")!=null)

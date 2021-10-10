@@ -29,8 +29,7 @@ if(request.getParameter("Nit_Proveedor")!=null)
 	mensaje="";
 	estado="disabled";
 }
-%>
-<%
+else
 if(request.getParameter("men")!=null)
 {
 	nit_proveedor=0;
@@ -41,6 +40,18 @@ if(request.getParameter("men")!=null)
 	mensaje=request.getParameter("men");
 	estado="enabled";
 }
+else
+	{
+	
+	nit_proveedor=0;
+	ciudad_proveedor="";
+	direccion_proveedor="";
+	nombre_proveedor="";
+	telefono_proveedor="";
+	mensaje="";
+	estado="enabled";
+	
+	}
 %>
 
 <div class="padre">
