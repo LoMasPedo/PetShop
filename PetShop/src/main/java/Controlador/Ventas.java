@@ -298,7 +298,7 @@ public class Ventas extends HttpServlet {
 				}
 				
 				
-				response.sendRedirect("Ventas.jsp?men=Factura registrada existamente"+"&&consec="+cventa);
+				response.sendRedirect("Ventas.jsp?men=Factura registrada exitosamente"+"&&consec="+cventa);
 		}catch(Exception e) {
 				response.sendRedirect("Ventas.jsp?men=Factura no registrada");
 		}

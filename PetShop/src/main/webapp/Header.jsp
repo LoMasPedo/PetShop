@@ -69,7 +69,7 @@ nav ul li:last-child {
 nav ul li a {
 	color: #ecf0f1;
 	font-size: 20px;
-	padding: 20px 20px; /*sele ajusto el tamaño a la barra rosada del menu*/
+	padding: 18.5px 20px; /*sele ajusto el tamaño a la barra rosada del menu*/
 	border-radius: 100px;
 	display: inline-block;
 	transition: all 0.5s ease 0s;
