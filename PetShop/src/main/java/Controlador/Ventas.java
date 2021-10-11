@@ -59,12 +59,12 @@ public class Ventas extends HttpServlet {
 			
 			double TotalVenta,TotalIva,TotalConIva,Iva1,Iva2,Iva3,Precio1,Precio2,Precio3,
 			Costo1,Costo2,Costo3;
-			float Cantidad1,Cantidad2,Cantidad3;
+			int Cantidad1,Cantidad2,Cantidad3;
 			Long codigoProducto1,codigoProducto2,codigoProducto3;
 			
-			Cantidad1=Long.parseLong(request.getParameter("cantidadp1"));
-			Cantidad2=Long.parseLong(request.getParameter("cantidadp2"));
-			Cantidad3=Long.parseLong(request.getParameter("cantidadp3"));
+			Cantidad1=Integer.parseInt(request.getParameter("cantidadp1"));
+			Cantidad2=Integer.parseInt(request.getParameter("cantidadp2"));
+			Cantidad3=Integer.parseInt(request.getParameter("cantidadp3"));
 						
 			codigoProducto1=Long.parseLong(request.getParameter("codP1"));
 			codigoProducto2=Long.parseLong(request.getParameter("codP2"));
@@ -256,9 +256,9 @@ public class Ventas extends HttpServlet {
 				Long codigoProducto1=Long.parseLong(request.getParameter("codP1"));
 				Long codigoProducto2=Long.parseLong(request.getParameter("codP2"));
 				Long codigoProducto3=Long.parseLong(request.getParameter("codP3"));
-				float Cantidad1=Float.parseFloat(request.getParameter("cantidadp1"));
-				float Cantidad2=Float.parseFloat(request.getParameter("cantidadp2"));
-				float Cantidad3=Float.parseFloat(request.getParameter("cantidadp3"));
+				int Cantidad1=Integer.parseInt(request.getParameter("cantidadp1"));
+				int Cantidad2=Integer.parseInt(request.getParameter("cantidadp2"));
+				int Cantidad3=Integer.parseInt(request.getParameter("cantidadp3"));
 				
 				ProductoDAO conexionProducto=new ProductoDAO();
 				ProductoDTO Pro1DTO=conexionProducto.Consultar_Producto(codigoProducto1);

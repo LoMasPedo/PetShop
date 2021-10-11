@@ -8,7 +8,7 @@ public class VentasDTO {
 	private double CedulaCliente,CedulaUsuario,IvaVenta,TotalVenta,ValorVenta,
 	ValorProducto1,ValorProducto2,ValorProducto3,IvaProducto1,IvaProducto2,IvaProducto3,Valor_VentaDet1,Valor_VentaDet2,Valor_VentaDet3;
 	
-	private float CantidadP1,CantidadP2,CantidadP3;
+	private int CantidadP1,CantidadP2,CantidadP3;
 	
 	private String NombreProducto1,NombreProducto2,NombreProducto3;
 	
@@ -20,7 +20,7 @@ public class VentasDTO {
 			Long codigoProducto3, double cedulaCliente, double cedulaUsuario, double ivaVenta, double totalVenta,
 			double valorVenta, double valorProducto1, double valorProducto2, double valorProducto3, double ivaProducto1,
 			double ivaProducto2, double ivaProducto3, double valor_VentaDet1, double valor_VentaDet2,
-			double valor_VentaDet3, float cantidadP1, float cantidadP2, float cantidadP3) {
+			double valor_VentaDet3, int cantidadP1, int cantidadP2, int cantidadP3) {
 	
 		CodigoProducto1 = codigoProducto1;
 		CodigoProducto2 = codigoProducto2;
@@ -198,27 +198,27 @@ public class VentasDTO {
 		Valor_VentaDet3 = valor_VentaDet3;
 	}
 
-	public float getCantidadP1() {
+	public int getCantidadP1() {
 		return CantidadP1;
 	}
 
-	public void setCantidadP1(float cantidadP1) {
+	public void setCantidadP1(int cantidadP1) {
 		CantidadP1 = cantidadP1;
 	}
 
-	public float getCantidadP2() {
+	public int getCantidadP2() {
 		return CantidadP2;
 	}
 
-	public void setCantidadP2(float cantidadP2) {
+	public void setCantidadP2(int cantidadP2) {
 		CantidadP2 = cantidadP2;
 	}
 
-	public float getCantidadP3() {
+	public int getCantidadP3() {
 		return CantidadP3;
 	}
 
-	public void setCantidadP3(float cantidadP3) {
+	public void setCantidadP3(int cantidadP3) {
 		CantidadP3 = cantidadP3;
 	}
 

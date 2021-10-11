@@ -16,7 +16,7 @@
 
 <%!
 String mensaje="";
-float canT1,canT2,canT3;
+int canT1,canT2,canT3;
 float vlrT1,vlrT2,vlrT3,totalVenta,totalIva,totalConIva,vlrU1,vlrU2,vlrU3;
 long cedulaCliente = 0, cedulaUsuario=0, codigoProducto1,codigoProducto2,codigoProducto3;
 String NombreProducto1, NombreProducto2, NombreProducto3;
@@ -207,21 +207,21 @@ if(request.getParameter("totalconiva")!=null)
 
 if(request.getParameter("cantidadp1")!=null)
 {
-	canT1=Float.parseFloat(request.getParameter("cantidadp1"));
+	canT1=Integer.parseInt(request.getParameter("cantidadp1"));
 	mensaje="";
 	estado="enabled";
 }
 
 if(request.getParameter("cantidadp2")!=null)
 {
-	canT2=Float.parseFloat(request.getParameter("cantidadp2"));
+	canT2=Integer.parseInt(request.getParameter("cantidadp2"));
 	mensaje="";
 	estado="enabled";
 }
 
 if(request.getParameter("cantidadp3")!=null)
 {
-	canT3=Float.parseFloat(request.getParameter("cantidadp3"));
+	canT3=Integer.parseInt(request.getParameter("cantidadp3"));
 	mensaje="";
 	estado="enabled";
 }
