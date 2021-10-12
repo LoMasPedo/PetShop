@@ -121,6 +121,7 @@ public class Ventas extends HttpServlet {
 					
 			}else
 					{
+					JOptionPane.showMessageDialog(null, "Usuario no existe.");
 					response.sendRedirect("Ventas.jsp?men=Usuario no existe.");
 					}
 			}
@@ -149,6 +150,7 @@ public class Ventas extends HttpServlet {
 					
 			}else
 					{
+					JOptionPane.showMessageDialog(null, "Cliente no existe.");
 					response.sendRedirect("Ventas.jsp?men=Cliente no existe.");
 					}
 			}
@@ -180,6 +182,7 @@ public class Ventas extends HttpServlet {
 			}
 			else
 			{
+				JOptionPane.showMessageDialog(null, "Producto no existe.");
 				response.sendRedirect("Ventas.jsp?men=Producto no existe.");
 			}
 		}
@@ -210,6 +213,7 @@ public class Ventas extends HttpServlet {
 			}
 			else
 			{
+				JOptionPane.showMessageDialog(null, "Producto no existe.");
 				response.sendRedirect("Ventas.jsp?men=Producto no existe.");
 			}
 		}
@@ -240,6 +244,7 @@ public class Ventas extends HttpServlet {
 			}
 			else
 			{
+				JOptionPane.showMessageDialog(null, "Producto no existe.");
 				response.sendRedirect("Ventas.jsp?men=Producto no existe.");
 			}
 		}
@@ -297,9 +302,10 @@ public class Ventas extends HttpServlet {
 					cventa = res.getInt(1);
 				}
 				
-				
+				JOptionPane.showMessageDialog(null, "Factura registrada exitosamente");
 				response.sendRedirect("Ventas.jsp?men=Factura registrada exitosamente"+"&&consec="+cventa);
 		}catch(Exception e) {
+			JOptionPane.showMessageDialog(null, "Factura no registrada");
 				response.sendRedirect("Ventas.jsp?men=Factura no registrada");
 		}
 			
