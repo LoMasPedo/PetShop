@@ -1,5 +1,5 @@
-create database PetShop_db;
-use PetShop_db;
+create database Grupo31_Equipo_4;
+use Grupo31_Equipo_4;
 
 CREATE TABLE clientes 
 (
@@ -15,7 +15,7 @@ CREATE TABLE usuarios
   cedula_usuario bigint(20) PRIMARY KEY,
   email_usuario varchar(255) NOT NULL,
   nombre_usuario varchar(255) NOT NULL,
-  password varchar(255) NOT NULL,  
+  password varchar(255) NOT NULL,
   usuario varchar(255) NOT NULL
 );
 
@@ -24,7 +24,7 @@ CREATE TABLE proveedores
   nitproveedor bigint(20) PRIMARY KEY,
   ciudad_proveedor varchar(255) NOT NULL,
   direccion_proveedor varchar(255) NOT NULL,
-  nombre_proveedor varchar(255) NOT NULL,  
+  nombre_proveedor varchar(255) NOT NULL,
   telefono_proveedor varchar(255) NOT NULL
 );
 
@@ -33,7 +33,7 @@ CREATE TABLE productos
   codigo_producto bigint(20) auto_increment PRIMARY KEY,
   ivacompra double NOT NULL,
   nitproveedor bigint(20) NOT NULL,
-  nombre_producto varchar(255) NOT NULL,  
+  nombre_producto varchar(255) NOT NULL,
   precio_compra double NOT NULL,
   precio_venta double NOT NULL
 );
@@ -50,7 +50,6 @@ CREATE TABLE ventas
 );
 alter table ventas add foreign key (cedula_cliente) references clientes(cedula_cliente);
 alter table ventas add foreign key (cedula_usuario) references usuarios(cedula_usuario);
-
 CREATE TABLE detalle_ventas
 (
   codigo_detalle_venta bigint(20) auto_increment PRIMARY KEY,
@@ -64,5 +63,3 @@ CREATE TABLE detalle_ventas
 
 alter table detalle_ventas add foreign key (codigo_producto) references productos(codigo_producto);
 alter table detalle_ventas add foreign key (codigo_venta) references ventas(codigo_venta);
-
-

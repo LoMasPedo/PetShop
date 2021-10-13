@@ -37,7 +37,7 @@ public class VentasDAO {
 			System.out.println("Inserto venta correctamente");
 			
 			if(resul) {
-				sql= "select max(codigo_venta) from petshop_db.ventas";
+				sql= "select max(codigo_venta) from Grupo31_Equipo_4.ventas";
 				ps=con.prepareStatement(sql);
 				res=ps.executeQuery();
 				cventa=0;
@@ -86,7 +86,7 @@ public class VentasDAO {
 	public int consecutivo () {
 		int cventa=0;
 		try {
-			String sql= "select max(codigo_venta) from petshop_db.ventas";
+			String sql= "select max(codigo_venta) from Grupo31_Equipo_4.ventas";
 			ps=con.prepareStatement(sql);
 			res=ps.executeQuery();
 			
