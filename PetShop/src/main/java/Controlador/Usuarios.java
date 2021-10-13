@@ -78,6 +78,8 @@ public class Usuarios extends HttpServlet {
 			} else {
 				response.sendRedirect("Usuarios.jsp?men=El Usuario no existe");
 			}
+			
+			
 		}
 
 		if (request.getParameter("actualizar") != null) {

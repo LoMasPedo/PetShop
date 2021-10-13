@@ -84,7 +84,7 @@ de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales
       <legend>Consultar</legend>
       <div class="divformulario">
       <label class="labelformulario">cedula: </label>
-      <input  type="number" name="cedula_cliente" required></div>
+      <input  type="number" name="cedula_cliente" required placeholder= "Solo campos numéricos"></div>
       <div ><input class="botonformulario" type="submit" name="consultar" value="consultar" ></div>
    </fieldset>
 </form>

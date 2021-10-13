@@ -94,7 +94,7 @@ de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales
       <legend>Consultar</legend>
       <div class="divformulario">
       <label class="labelformulario">NIT Proveedor: </label>
-      <input  type="number" name="Nit_Proveedor" required></div>
+      <input  type="number" name="Nit_Proveedor" required placeholder= "Solo campos numéricos"></div>
       <div ><input class="botonformulario" type="submit" name="consultar" value="consultar" ></div>
    </fieldset>
 </form>

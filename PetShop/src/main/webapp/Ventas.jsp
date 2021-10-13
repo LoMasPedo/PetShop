@@ -229,13 +229,13 @@ if(request.getParameter("cantidadp3")!=null)
 		         <input class="botonformulario" type="submit" name="consultar_usuario" value="Consultar Usuario" >
 		      </th>
 		      <th>
-		         <label class="labelformulario">Usuario: </label>
+		         <label class="labelformulario"> Nombre Usuario: </label>
 		      </th>
 		      <th>
 		         <input   type="text" name="nombre_usuario" value="<%=nombreUsuario%>" required>
 		      </th>
 		      <th>
-		         <label class="labelformulario">Consec: </label>
+		         <label class="labelformulario">Consecutivo: </label>
 		      </th>
 		      <th>
 		         <input  type="text" name="consec" value="<%=conSec%>" required>
@@ -252,7 +252,7 @@ if(request.getParameter("cantidadp3")!=null)
 		         <input class="botonformulario" type="submit" name="consultar_cliente" value="Consultar Cliente" >
 		      </th>
 		      <th>
-		         <label class="labelformulario">Cliente: </label>
+		         <label class="labelformulario"> Nombre Cliente: </label>
 		      </th>
 		      <th>
 		         <input   type="text" name="nombre_cliente" value="<%=nombreCliente%>" required>
