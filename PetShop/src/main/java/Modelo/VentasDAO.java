@@ -83,6 +83,23 @@ public class VentasDAO {
 	}
 	
 	
+	public int consecutivo () {
+		int cventa=0;
+		try {
+			String sql= "select max(codigo_venta) from petshop_db.ventas";
+			ps=con.prepareStatement(sql);
+			res=ps.executeQuery();
+			
+			while(res.next()) {
+				cventa = res.getInt(1);
+			}
+			
+			
+		}catch(SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error al confirmar: "+ex);
+			}
+		return cventa;
+	}
 	
 	public ArrayList<ReporteVentasDTO> ListaVentas(){
 		ReporteVentasDTO venta= null;
