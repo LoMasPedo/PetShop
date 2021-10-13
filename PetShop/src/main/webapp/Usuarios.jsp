@@ -83,7 +83,7 @@ if(request.getParameter("men")!=null){
 	      <legend>Consultar</legend>
 	      <div class="divformulario">
 	      <label class="labelformulario">Cedula: </label>
-	      <input  type="text" name="Cedula_usuario" required></div>
+	      <input  type="number" name="Cedula_usuario" required></div>
 	      <div ><input class="botonformulario" type="submit" name="consultar" value="consultar" ></div>
 	   </fieldset>
 	</form>

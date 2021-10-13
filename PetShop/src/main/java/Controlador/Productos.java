@@ -135,7 +135,8 @@ public class Productos extends HttpServlet
 			}
 			else
 			{
-				response.sendRedirect("Clientes.jsp?men=Cliente no existe.");
+				response.sendRedirect("Productos.jsp?men=Producto no existe.");
+				JOptionPane.showMessageDialog(null, "Producto no existe.");
 			}
 		}
 	}
