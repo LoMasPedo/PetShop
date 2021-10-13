@@ -19,11 +19,43 @@ String mensaje="";
 int canT1,canT2,canT3;
 float vlrT1,vlrT2,vlrT3,totalVenta,totalIva,totalConIva,vlrU1,vlrU2,vlrU3;
 long cedulaCliente = 0, cedulaUsuario=0, codigoProducto1,codigoProducto2,codigoProducto3;
-String NombreProducto1, NombreProducto2, NombreProducto3;
-String estado="enabled",nombreCliente,nombreUsuario,conSec;
+String NombreProducto1="", NombreProducto2="", NombreProducto3="";
+String estado="enabled",nombreCliente="",nombreUsuario="",conSec="";
 %>
 
 <%
+
+if(request.getParameter("limpiar")!=null)
+{
+	cedulaCliente=0;
+    cedulaUsuario=0;    
+    estado="enabled";
+    canT1 =0;
+    canT2 = 0;
+    canT3 = 0;
+    vlrT1 =0;
+    vlrT2= 0;
+    vlrT3 = 0;
+    totalVenta=0;
+    totalIva =0;
+    totalConIva =0;
+    vlrU1=0;
+    vlrU2=0;
+    vlrU3=0;
+    cedulaCliente = 0;
+    cedulaUsuario=0;
+    codigoProducto1 = 0;
+    codigoProducto2=0; 
+    codigoProducto3=0;
+    NombreProducto1="";
+    NombreProducto2="";
+    NombreProducto3="";
+    nombreCliente="";
+    nombreUsuario="";
+    conSec="";
+    
+}
+
 
 if(request.getParameter("cedula_cliente")!=null)
 {
@@ -157,6 +189,8 @@ if(request.getParameter("men")!=null)
 
 
 
+
+
 if(request.getParameter("totalventa")!=null)
 {
 	totalVenta=Float.parseFloat(request.getParameter("totalventa"));
@@ -223,7 +257,7 @@ if(request.getParameter("cantidadp3")!=null)
 		         <label class="labelformulario" >Cedula Usuario: </label>
 		      </th>
 		      <th>
-		         <input type="number" name="cedula_usuario" value="<%=cedulaUsuario%>" required <%=estado%>>
+		         <input type="number" name="cedula_usuario" value="<%=cedulaUsuario%>"  <%=estado%>>
 		      </th>
 		      <th>
 		         <input class="botonformulario" type="submit" name="consultar_usuario" value="Consultar Usuario" >
@@ -232,13 +266,13 @@ if(request.getParameter("cantidadp3")!=null)
 		         <label class="labelformulario"> Nombre Usuario: </label>
 		      </th>
 		      <th>
-		         <input   type="text" name="nombre_usuario" value="<%=nombreUsuario%>" required>
+		         <input   type="text" name="nombre_usuario" value="<%=nombreUsuario%>" >
 		      </th>
 		      <th>
 		         <label class="labelformulario">Consecutivo: </label>
 		      </th>
 		      <th>
-		         <input  type="text" name="consec" value="<%=conSec%>" required>
+		         <input  type="text" name="consec" value="<%=conSec%>">
 		      </th>
 			</tr>
 		    <tr>
@@ -246,7 +280,7 @@ if(request.getParameter("cantidadp3")!=null)
 		         <label class="labelformulario" >Cedula Cliente: </label>
 		      </th>
 		      <th>
-		         <input type="number" name="cedula_cliente" value="<%=cedulaCliente%>" required <%=estado%>>
+		         <input type="number" name="cedula_cliente" value="<%=cedulaCliente%>"  <%=estado%>>
 		      </th>
 		      <th>
 		         <input class="botonformulario" type="submit" name="consultar_cliente" value="Consultar Cliente" >
@@ -255,7 +289,7 @@ if(request.getParameter("cantidadp3")!=null)
 		         <label class="labelformulario"> Nombre Cliente: </label>
 		      </th>
 		      <th>
-		         <input   type="text" name="nombre_cliente" value="<%=nombreCliente%>" required>
+		         <input   type="text" name="nombre_cliente" value="<%=nombreCliente%>" >
 		      </th>
 		      
 		      
@@ -279,64 +313,64 @@ if(request.getParameter("cantidadp3")!=null)
 		</tr>
 		<tr>
 			<th>
-				<input type="number" name="codP1" value="<%=codigoProducto1%>" required>
+				<input type="number" name="codP1" value="<%=codigoProducto1%>">
 			<th>
 			<th>
 				<input class="botonformulario" type="submit" name="consultar_p1" value="Consultar" >
 			<th>
 			<th>
-				<input type="text" name="nomP1" value="<%=NombreProducto1%>" required>
+				<input type="text" name="nomP1" value="<%=NombreProducto1%>" >
 			<th>
 			<th class="cantidad">
-				<input type="number" name="cantidadp1" value="<%=canT1%>" required>
+				<input type="number" name="cantidadp1" value="<%=canT1%>">
 			<th>
 			<th>
-				<input type="number" name="vlru1" value="<%=vlrU1%>" required>
+				<input type="number" name="vlru1" value="<%=vlrU1%>">
 			<th>
 			<th>
-				<input type="number" name="vlrt1" value="<%=vlrT1%>" required>
+				<input type="number" name="vlrt1" value="<%=vlrT1%>" >
 			<th>
 			
 		</tr>
 		<tr>
 			<th>
-				<input type="number" name="codP2" value="<%=codigoProducto2%>" required>
+				<input type="number" name="codP2" value="<%=codigoProducto2%>" >
 			<th>
 			<th>
 				<input class="botonformulario" type="submit" name="consultar_p2" value="Consultar" >
 			<th>
 			<th>
-				<input type="text" name="nomP2" value="<%=NombreProducto2%>" required>
+				<input type="text" name="nomP2" value="<%=NombreProducto2%>" >
 			<th>
 			<th class="cantidad">
-				<input type="number" name="cantidadp2" value="<%=canT2%>" required>
+				<input type="number" name="cantidadp2" value="<%=canT2%>" >
 			<th>
 			<th>
-				<input type="number" name="vlru2" value="<%=vlrU2%>" required>
+				<input type="number" name="vlru2" value="<%=vlrU2%>" >
 			<th>
 			<th>
-				<input type="number" name="vlrt2" value="<%=vlrT2%>" required>
+				<input type="number" name="vlrt2" value="<%=vlrT2%>" >
 			<th>
 			
 		</tr>
 		<tr>
 			<th>
-				<input type="number" name="codP3" value="<%=codigoProducto3%>" required>
+				<input type="number" name="codP3" value="<%=codigoProducto3%>">
 			<th>
 			<th>
 				<input class="botonformulario" type="submit" name="consultar_p3" value="Consultar" >
 			<th>
 			<th>
-				<input type="text" name="nomP3" value="<%=NombreProducto3%>" required>
+				<input type="text" name="nomP3" value="<%=NombreProducto3%>" >
 			<th>
 			<th class="cantidad">
-				<input type="number" name="cantidadp3" value="<%=canT3%>" required>
+				<input type="number" name="cantidadp3" value="<%=canT3%>" >
 			<th>
 			<th>
-				<input type="number" name="vlru3" value="<%=vlrU3%>" required>
+				<input type="number" name="vlru3" value="<%=vlrU3%>" >
 			<th>
 			<th>
-				<input type="number" name="vlrt3" value="<%=vlrT3%>" required>
+				<input type="number" name="vlrt3" value="<%=vlrT3%>" >
 			<th>
 			
 		</tr>
@@ -350,26 +384,27 @@ if(request.getParameter("cantidadp3")!=null)
 			<th></th>
 			<th>Total Venta</th>
 			<th>	
-				<input type="number" name="totalventa" value="<%=totalVenta%>" required>
+				<input type="number" name="totalventa" value="<%=totalVenta%>" >
 		    </th>
 		</tr>
 		<tr>
 			<th></th>
 			<th>Total IVA</th>
 			<th>
-				<input type="number" name="totaliva" value="<%=totalIva%>" required>
+				<input type="number" name="totaliva" value="<%=totalIva%>" >
 			</th>
 		</tr>
 		<tr>
 			<th></th>
 			<th> Total Con Iva</th>
 			<th>
-				<input type="number" name="totalconiva" value="<%=totalConIva%>" required> 
+				<input type="number" name="totalconiva" value="<%=totalConIva%>" > 
 			</th>
 		</tr>
 		
 			<th><input class="botonformulario" type="submit" name="calcular" value="Calcular" > </th>
 			<th><input class="botonformulario" type="submit" name="confirmar" value="Confirmar" > </th>
+			<th><input class="botonformulario" type="submit" name="limpiar" value="Limpiar" > </th>
 	</table>
 	</div>
 	

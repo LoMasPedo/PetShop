@@ -294,14 +294,7 @@ public class Ventas extends HttpServlet {
 				VentasDAO vDAO = new VentasDAO();
 				vDAO.Confirmar(ven);
 				int cventa=vDAO.consecutivo();
-				//esto deberia llamarse en el DAO, no en este archivo
-				//String sql= "select max(codigo_venta) from petshop_db.ventas";
-				//ps=con.prepareStatement(sql);
-				//res=ps.executeQuery();
-				//int cventa=0;
-				//while(res.next()) {
-					//cventa = res.getInt(1);
-				//}
+				
 				
 				JOptionPane.showMessageDialog(null, "Factura registrada exitosamente");
 				response.sendRedirect("Ventas.jsp?men=Factura registrada exitosamente"+"&&consec="+cventa);
@@ -312,5 +305,10 @@ public class Ventas extends HttpServlet {
 			
 		
 	}
+		
+		if(request.getParameter("limpiar")!=null) {
+			
+			response.sendRedirect("Ventas.jsp?limpiar=1");
+		}
 	}
 }
