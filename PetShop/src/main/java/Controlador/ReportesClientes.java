@@ -49,7 +49,8 @@ public class ReportesClientes extends HttpServlet {
 				lista = clienDao.Listar_Cliente();
 				salida.println(datos.toJson(lista));
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Error al generar el reporte de clientes" + e);
+				//JOptionPane.showMessageDialog(null, "Error al generar el reporte de clientes" + e);
+				response.sendRedirect("Clientes.jsp?men=Error al generar el reporte de clientes");
 			}
 		}
 	}

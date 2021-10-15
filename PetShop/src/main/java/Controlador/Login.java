@@ -38,8 +38,11 @@ public class Login extends HttpServlet {
 				response.sendRedirect("index.jsp?nom="+usuario);
 			
 			}else {
-				JOptionPane.showMessageDialog(null,"Usuario o Password Errado");
+				//JOptionPane.showMessageDialog(null,"Usuario o Password Errado");
+				System.out.println("Usuario o Password Errado");
 				response.sendRedirect("login.jsp");
+				
+		
 			}
 			
 		}else {

@@ -46,14 +46,14 @@ public class Proveedores extends HttpServlet {
 			ProveedoresDTO proveedoresDTO = new ProveedoresDTO (Nit_Proveedor, Ciudad_Proveedor, Direccion_Proveedor, Nombre_Proveedor, Telefono_Proveedor);
 			
 			if(proveedoresDAO.Insertar_Provedores(proveedoresDTO)) {
-				JOptionPane.showMessageDialog(null, "Proveedor registrado exitosamente");
+				//JOptionPane.showMessageDialog(null, "Proveedor registrado exitosamente");
 				System.out.println("se registro exitosamente");
 				response.sendRedirect("Proveedores.jsp?men=Proveedor Registrado Exitosamente");
 				
 			}else {
-				JOptionPane.showMessageDialog(null, "El proveedor no se registro");
+				//JOptionPane.showMessageDialog(null, "El proveedor no se registro");
 				System.out.println("no se registro");
-				response.sendRedirect("Proveedores.jsp?men=Proveedor Registrado Exitosamente");
+				response.sendRedirect("Proveedores.jsp?men=Proveedor No Registrado Exitosamente");
 			}
 		}
 		
@@ -100,7 +100,7 @@ public class Proveedores extends HttpServlet {
 				response.sendRedirect("Proveedores.jsp?men=Proveedor Actualizado Exitosamente.");
 					}
 				}else {
-					JOptionPane.showMessageDialog(null, "El Proveedor no se Actualizo.");
+					//JOptionPane.showMessageDialog(null, "El Proveedor no se Actualizo.");
 					//System.out.println("el proveedor no se actualizo");
 					response.sendRedirect("Proveedores.jsp?men=El proveedor no se Actualizo.");
 				}
@@ -119,7 +119,7 @@ public class Proveedores extends HttpServlet {
 			}
 				else
 				{
-					JOptionPane.showMessageDialog(null, "El proveedor no se puede eliminar, verifique si ya tiene productos.");
+					//JOptionPane.showMessageDialog(null, "El proveedor no se puede eliminar, verifique si ya tiene productos.");
 					response.sendRedirect("Proveedores.jsp?men=El proveedor no se elimino.");
 				}
 			}else {

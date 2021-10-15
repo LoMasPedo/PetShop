@@ -42,9 +42,9 @@ public class Productos extends HttpServlet
 			Part archivo=request.getPart("archivo");
 			String nombre=request.getParameter("nombreArch");
 			//JOptionPane.showMessageDialog(null, archivo.getSubmittedFileName());
-			String Url="C:/Users/franc/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
+			//String Url="C:/Users/franc/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
 			//String Url="C:/Users/andre/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc/";
-			//String Url="C:/Users/yenny/OneDrive/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc";
+			String Url="C:/Users/yenny/OneDrive/Documents/GitHub/Equipo4_Grupo31/PetShop/src/main/webapp/Doc";
 			//JOptionPane.showMessageDialog(null, Url);
 			
 			try 
@@ -69,18 +69,20 @@ public class Productos extends HttpServlet
 				{
 					//System.out.println("Archivo cargado Exitosamente");
 					response.sendRedirect("Productos.jsp?men2=Archivo cargado Exitosamente");
-					JOptionPane.showMessageDialog(null, "Archivo Cargado Correctamente");
+					//JOptionPane.showMessageDialog(null, "Archivo Cargado Correctamente");
 				}
 				else 
 				{
-					JOptionPane.showMessageDialog(null, "Los productos del archivo no se cargaron");
+					//JOptionPane.showMessageDialog(null, "Los productos del archivo no se cargaron");
 					//System.out.println("Los productos del archivo no se cargaron");
+					response.sendRedirect("Productos.jsp?men2=Los productos del archivo no se cargaron");
 				}
 			}
 			catch(Exception e) 
 			{
-				JOptionPane.showMessageDialog(null, "Error al cargar Archivo"+e);
+				//JOptionPane.showMessageDialog(null, "Error al cargar Archivo"+e);
 				//System.out.println("Error al cargar Archivo"+e);
+				
 			}
 		}		
 
@@ -103,12 +105,12 @@ public class Productos extends HttpServlet
 			
 			if(prodDao.Actualizar_Producto(prodDto_Act))
 			{
-				JOptionPane.showMessageDialog(null, "Producto se Actualizo Exitosamente.");
+				//JOptionPane.showMessageDialog(null, "Producto se Actualizo Exitosamente.");
 				response.sendRedirect("Productos.jsp?men=Producto Actualizado Exitosamente.");
 			}
 			else 
 			{
-				JOptionPane.showMessageDialog(null, "El Producto no se Modifico.");
+				//JOptionPane.showMessageDialog(null, "El Producto no se Modifico.");
 				response.sendRedirect("Productos.jsp?men=El Producto no se Modifico.");
 			}
 		}
@@ -136,7 +138,7 @@ public class Productos extends HttpServlet
 			else
 			{
 				response.sendRedirect("Productos.jsp?men=Producto no existe.");
-				JOptionPane.showMessageDialog(null, "Producto no existe.");
+				//JOptionPane.showMessageDialog(null, "Producto no existe.");
 			}
 		}
 	}

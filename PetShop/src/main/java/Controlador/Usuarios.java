@@ -50,12 +50,12 @@ public class Usuarios extends HttpServlet {
 			UsuarioDTO usuarioDTO = new UsuarioDTO(Cedula_usuario, Email_usuario, Nombre_usuario, Password, Usuario);
 			
 			if (usuarioDao.Insertar_Usuario(usuarioDTO)) {
-				JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente");
+				//JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente");
 				System.out.println("se registro exitosamente");
 				response.sendRedirect("Usuarios.jsp?men=Usuario Registrado Exitosamente");
 
 			} else {
-				JOptionPane.showMessageDialog(null, "El Usuario no se registro");
+				//JOptionPane.showMessageDialog(null, "El Usuario no se registro");
 				System.out.println("no se registro");
 				response.sendRedirect("Usuarios.jsp?men=Usuario no se Registro");
 			}
@@ -99,13 +99,13 @@ public class Usuarios extends HttpServlet {
 			
 			UsuarioDTO libDto_Act = new UsuarioDTO(Cedula_usuario, Email_usuario, Nombre_usuario, Password, Usuario);
 			if (usuarioDao.Actualizar_Usuario(libDto_Act)) {
-				JOptionPane.showMessageDialog(null, "El Usuario Actualizo Exitosamente.");
+				//JOptionPane.showMessageDialog(null, "El Usuario Actualizo Exitosamente.");
 				System.out.println("se actualizo el usuario");
 				response.sendRedirect("Usuarios.jsp?men=Usuario Actualizado Exitosamente.");
 						} 
 				}else {
-				JOptionPane.showMessageDialog(null, "El Usuario no se Actualizo.");
-				//System.out.println("el usuario no se actualizo");
+				//JOptionPane.showMessageDialog(null, "El Usuario no se Actualizo.");
+				System.out.println("el usuario no se actualizo");
 				response.sendRedirect("Usuarios.jsp?men=El Usuario no se Actualizo.");
 			}
 		}
@@ -120,12 +120,12 @@ public class Usuarios extends HttpServlet {
 			{
 				if (usuarioDao.Eliminar_Usuario(Cedula_usuario)) 
 				{
-					JOptionPane.showMessageDialog(null, "Usuario Eliminado.");
+					//JOptionPane.showMessageDialog(null, "Usuario Eliminado.");
 					response.sendRedirect("Usuarios.jsp?men=Usuario Eliminado");
 				}
 				else
 				{
-					JOptionPane.showMessageDialog(null, "El Usuario no se puede eliminar, verifique si ya tiene ventas.");
+					//JOptionPane.showMessageDialog(null, "El Usuario no se puede eliminar, verifique si ya tiene ventas.");
 					response.sendRedirect("Usuarios.jsp?men=El Usuario no se elimino.");
 				}
 			}
