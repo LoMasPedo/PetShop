@@ -49,8 +49,7 @@ public class ReportesVentas extends HttpServlet {
 					lista = ventasDao.ListaVentas();
 					salida.println(datos.toJson(lista));
 				} catch (Exception e) {
-					//JOptionPane.showMessageDialog(null, "Error al generar el reporte de Ventas" + e);
-					response.sendRedirect("Ventas.jsp?men=Error al generar el reporte de Ventas");
+					JOptionPane.showMessageDialog(null, "Error al generar el reporte de Ventas" + e);
 				}
 			}
 	}

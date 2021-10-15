@@ -49,13 +49,13 @@ public class Clientes extends HttpServlet {
 			
 			if(clienDao.Insertar_Cliente(clienDto)) 
 			{
-				//JOptionPane.showMessageDialog(null, "Cliente Creado Exitosamente.");
+				JOptionPane.showMessageDialog(null, "Cliente Creado Exitosamente.");
 				System.out.println("se registro exitosamente");
 				response.sendRedirect("Clientes.jsp?men=Cliente Creado Exitosamente.");
 			}
 			else 
 			{
-				//JOptionPane.showMessageDialog(null, "El Cliente no se creo.");
+				JOptionPane.showMessageDialog(null, "El Cliente no se creo.");
 				System.out.println("el cliente no se registro");
 				response.sendRedirect("Clientes.jsp?men=El Cliente no se creo.");
 			}
@@ -110,7 +110,7 @@ public class Clientes extends HttpServlet {
 			}
 			   }else 	{
 				   
-				   //JOptionPane.showMessageDialog(null, "El cliente no se Actualizo.");
+				   JOptionPane.showMessageDialog(null, "El cliente no se Actualizo.");
 					System.out.println("el cliente no se actualizo");
 					response.sendRedirect("Clientes.jsp?men=El cliente no se Actualizo.");
 				 }
@@ -134,7 +134,7 @@ public class Clientes extends HttpServlet {
 					}
 					else
 					{
-						//JOptionPane.showMessageDialog(null, "El cliente no se puede eliminar, verifique si ya tiene ventas.");
+						JOptionPane.showMessageDialog(null, "El cliente no se puede eliminar, verifique si ya tiene ventas.");
 						response.sendRedirect("Clientes.jsp?men=El cliente no se elimino.");
 					}
 				}
