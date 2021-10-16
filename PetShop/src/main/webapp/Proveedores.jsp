@@ -5,6 +5,8 @@
 <head>
 	
 <meta charset="ISO-8859-1">
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/modulos.js"></script>
 <title>D Pet Shop</title>
 <link rel="stylesheet" href="css/Opciones.css">
 </head>
@@ -60,7 +62,7 @@ else
 
 <!--  pueden usar esta lib para los estilos https://getbootstrap.com/docs/5.1/forms/overview/ copie el ejemplo del formulario
 de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales/como-centrar-un-div-con-css/ -->
-<form action="Proveedores" method="post" >
+<form action="Proveedores" method="post" onsubmit="return validacion()">
 <fieldset>
 	<legend>Datos Proveedor:</legend>
 	<div  class="divformulario">
