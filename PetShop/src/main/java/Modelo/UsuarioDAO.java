@@ -27,7 +27,6 @@ public class UsuarioDAO {
 		ps.setString(5, usua.getUsuario());
 		resul=ps.executeUpdate()>0;	
 		}catch(SQLException ex) {
-			//JOptionPane.showMessageDialog(null,"Error al insertar usuario: "+ex);
 			System.out.println("error al insertar"+ex);
 		}
 		return resul;
@@ -45,7 +44,6 @@ public class UsuarioDAO {
 		ps.setLong(5, lib.getCedula_usuario());
 		resul=ps.executeUpdate()>0;	
 		}catch(SQLException ex) {
-			//JOptionPane.showMessageDialog(null,"error al actualizar: "+ex);
 			System.out.println("error actualizar"+ ex);
 		}
 		return resul;
@@ -60,7 +58,6 @@ public class UsuarioDAO {
 		ps.setLong(1, Cedula_usuario);
 		resul=ps.executeUpdate()>0;	
 		}catch(SQLException ex) {
-			//JOptionPane.showMessageDialog(null,"error al eliminar Usuario: "+ex);
 			System.out.println("error a eliminar usuario"+ex);
 		}
 		return resul;
@@ -79,7 +76,6 @@ public class UsuarioDAO {
 			lib = new UsuarioDTO(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
 		}
 		}catch(SQLException e) {
-			//JOptionPane.showMessageDialog(null,"Error al consultar" +e);
 			System.out.println("Error al consultar" +e);
 
 		}
@@ -105,7 +101,6 @@ public class UsuarioDAO {
         }
         catch(SQLException e) 
         {
-            //JOptionPane.showMessageDialog(null,"Error al consultar" +e);
             System.out.println("error al consultar"+e);
         }
         return lista;

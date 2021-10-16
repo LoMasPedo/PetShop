@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
 import Modelo.UsuarioDAO;
 import Modelo.UsuarioDTO;
@@ -50,12 +49,10 @@ public class Usuarios extends HttpServlet {
 			UsuarioDTO usuarioDTO = new UsuarioDTO(Cedula_usuario, Email_usuario, Nombre_usuario, Password, Usuario);
 			
 			if (usuarioDao.Insertar_Usuario(usuarioDTO)) {
-				JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente");
 				System.out.println("se registro exitosamente");
 				response.sendRedirect("Usuarios.jsp?men=Usuario Registrado Exitosamente");
 
 			} else {
-				JOptionPane.showMessageDialog(null, "El Usuario no se registro");
 				System.out.println("no se registro");
 				response.sendRedirect("Usuarios.jsp?men=Usuario no se Registro");
 			}
@@ -92,20 +89,17 @@ public class Usuarios extends HttpServlet {
 			Usuario = request.getParameter("Usuario");
 
 			
-			int op = JOptionPane.showConfirmDialog(null, "Desea Actualizar el usuario: " + Cedula_usuario,
-					"YES_NO_OPTION", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+			int op = 0;
 			if (op == 0) {
 			
 			
 			UsuarioDTO libDto_Act = new UsuarioDTO(Cedula_usuario, Email_usuario, Nombre_usuario, Password, Usuario);
 			if (usuarioDao.Actualizar_Usuario(libDto_Act)) {
-				JOptionPane.showMessageDialog(null, "El Usuario Actualizo Exitosamente.");
 				System.out.println("se actualizo el usuario");
 				response.sendRedirect("Usuarios.jsp?men=Usuario Actualizado Exitosamente.");
 						} 
 				}else {
-				JOptionPane.showMessageDialog(null, "El Usuario no se Actualizo.");
-				//System.out.println("el usuario no se actualizo");
+				System.out.println("el usuario no se actualizo");
 				response.sendRedirect("Usuarios.jsp?men=El Usuario no se Actualizo.");
 			}
 		}
@@ -114,18 +108,15 @@ public class Usuarios extends HttpServlet {
 		{
 			long Cedula_usuario;
 			Cedula_usuario = Long.parseLong(request.getParameter("Cedula_usuario"));
-			int op = JOptionPane.showConfirmDialog(null, "Desea Eliminar el usuario: " + Cedula_usuario,
-					"YES_NO_OPTION", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+			int op = 0;
 			if (op == 0)
 			{
 				if (usuarioDao.Eliminar_Usuario(Cedula_usuario)) 
 				{
-					JOptionPane.showMessageDialog(null, "Usuario Eliminado.");
 					response.sendRedirect("Usuarios.jsp?men=Usuario Eliminado");
 				}
 				else
 				{
-					JOptionPane.showMessageDialog(null, "El Usuario no se puede eliminar, verifique si ya tiene ventas.");
 					response.sendRedirect("Usuarios.jsp?men=El Usuario no se elimino.");
 				}
 			}

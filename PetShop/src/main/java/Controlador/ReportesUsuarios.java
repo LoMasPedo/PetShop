@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
 import com.google.gson.Gson;
 
@@ -42,14 +41,12 @@ public class ReportesUsuarios extends HttpServlet {
 
 		if (op.equals("Usuarios")) {
 			try {
-				//JOptionPane.showMessageDialog(null, "mensaje");
 				UsuarioDAO usuaDao = new UsuarioDAO();
 				ArrayList<UsuarioDTO> lista = new ArrayList<>();
 				lista = usuaDao.Listar_Usuario();
 				salida.println(datos.toJson(lista));
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Error al generar el reporte de usuarios" + e);
-			}
+				System.out.println("Error al generar el reporte de usuarios" + e);			}
 		}
 	}
 }

@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
 import com.google.gson.Gson;
 
@@ -49,7 +48,7 @@ public class ReportesVentas extends HttpServlet {
 					lista = ventasDao.ListaVentas();
 					salida.println(datos.toJson(lista));
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "Error al generar el reporte de Ventas" + e);
+					System.out.println("Error al generar el reporte de Ventas" + e);	
 				}
 			}
 	}

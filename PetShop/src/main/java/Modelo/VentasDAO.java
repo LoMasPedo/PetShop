@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
 
 import Controlador.Conexion;
 
@@ -77,7 +76,7 @@ public class VentasDAO {
 				System.out.println("Inserto detalle de venta correctamente");
 			}
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al confirmar: "+ex);
+			System.out.println("error al confirmar"+ex);
 		}
 		return resul;
 	}
@@ -96,7 +95,8 @@ public class VentasDAO {
 			
 			
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al confirmar: "+ex);
+			System.out.println("error al confirmar"+ex);
+
 			}
 		return cventa;
 	}
@@ -120,7 +120,6 @@ public class VentasDAO {
 			}
 			catch(SQLException e) 
 			{
-				//JOptionPane.showMessageDialog(null,"Error al consultar" +e);
 				System.out.println("error al consultar"+e);
 			}
 		

@@ -31,7 +31,6 @@ public class ClienteDAO {
 		}
 		catch(SQLException ex) 
 		{
-			//JOptionPane.showMessageDialog(null,"Error al insertar cliente: "+ex);
 			System.out.println("error al insertar cliente"+ex);
 		}
 		return resul;
@@ -53,7 +52,6 @@ public class ClienteDAO {
 		}
 		catch(SQLException e) 
 		{
-			//JOptionPane.showMessageDialog(null,"Error al consultar" +e);
 			System.out.println("error al consultar"+e);
 		}
 	
@@ -76,7 +74,6 @@ public class ClienteDAO {
 		}
 		catch(SQLException ex) 
 		{
-			//JOptionPane.showMessageDialog(null,"error al actualizar: "+ex);
 			System.out.println("error actualizar"+ ex);
 		}
 		return resul;
@@ -94,7 +91,6 @@ public class ClienteDAO {
 		}
 		catch(SQLException ex) 
 		{
-			//JOptionPane.showMessageDialog(null,"error al eliminar Usuario: "+ex);
 			System.out.println("error a eliminar usuario"+ex);
 		}
 		return resul;
@@ -117,7 +113,6 @@ public class ClienteDAO {
 		}
 		catch(SQLException e) 
 		{
-			//JOptionPane.showMessageDialog(null,"Error al consultar" +e);
 			System.out.println("error al consultar"+e);
 		}
 	

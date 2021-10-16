@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
 
 import Controlador.Conexion;
 
@@ -25,8 +24,7 @@ public class ProductoDAO {
 		//ps.setString(1, Url);
 		resul=ps.executeUpdate()>0;
 		}catch(SQLException ex) {
-			JOptionPane.showMessageDialog(null,"error al insertar Productos: "+ex);
-			//System.out.println("Error al insertar productos"+ex);
+			System.out.println("Error al insertar productos"+ex);
 		}
 		return resul;
 		
@@ -50,7 +48,8 @@ public class ProductoDAO {
 		}
 		catch(SQLException ex) 
 		{
-			JOptionPane.showMessageDialog(null,"error al actualizar: "+ex);
+			System.out.println("Error al actualizar" +ex);
+
 		}
 		return resul;
 	}
@@ -68,8 +67,7 @@ public class ProductoDAO {
 			prod = new ProductoDTO(res.getLong(1),res.getDouble(2),res.getLong(3),res.getString(4),res.getDouble(5),res.getDouble(6));
 		}
 		}catch(SQLException e) {
-			JOptionPane.showMessageDialog(null,"Error al consultar" +e);
-			//System.out.println("Error al consultar" +e);
+			System.out.println("Error al consultar" +e);
 
 		}
 	
