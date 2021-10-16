@@ -7,6 +7,19 @@
 <meta charset="ISO-8859-1">
 <title>D Pet Shop</title>
 <link rel="stylesheet" href="css/Opciones.css">
+
+<script>
+
+function validacion() {
+	var resultado = window.confirm("Desea confirmar la accion?");
+	return resultado;
+}
+
+</script>
+
+
+
+
 </head>
 <body>
 
@@ -50,7 +63,7 @@ if(request.getParameter("men")!=null)
 
 <!--  pueden usar esta lib para los estilos https://getbootstrap.com/docs/5.1/forms/overview/ copie el ejemplo del formulario
 de aqui tome el ejemplo para centrar el formulario https://devcode.la/tutoriales/como-centrar-un-div-con-css/ -->
-<form action="Clientes" method="post" >
+<form action="Clientes" method="post" onsubmit="return validacion()">
 <fieldset>
 	<legend>Datos del Cliente:</legend>
 	<div  class="divformulario">
